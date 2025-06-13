@@ -1,0 +1,257 @@
+{
+  "/Users/dhruv.agrawal/Downloads/finalll/app/components/Footer.tsx": {
+    "all": false,
+    "path": "/Users/dhruv.agrawal/Downloads/finalll/app/components/Footer.tsx",
+    "statementMap": {"0": {
+      "start": {
+        "line": 4,
+        "column": 2
+      },
+      "end": {
+        "line": 8,
+        "column": 3
+      }
+    }},
+    "b": {},
+    "bT": {},
+    "s": {"0": 1},
+    "fnMap": {"0": {
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 33
+        },
+        "end": {
+          "line": 9,
+          "column": 1
+        }
+      },
+      "decl": {
+        "start": {
+          "line": 3,
+          "column": 24
+        },
+        "end": {
+          "line": 3,
+          "column": 30
+        }
+      },
+      "line": 3,
+      "name": "Footer"
+    }},
+    "f": {"0": 1},
+    "branchMap": {},
+    "_coverageSchema": "11020577277169172593",
+    "hash": "13923288939195760230"
+  },
+  "/Users/dhruv.agrawal/Downloads/finalll/app/dashboard/layout.tsx": {
+    "all": false,
+    "path": "/Users/dhruv.agrawal/Downloads/finalll/app/dashboard/layout.tsx",
+    "statementMap": {"0": {
+      "start": {
+        "line": 5,
+        "column": 2
+      },
+      "end": {
+        "line": 15,
+        "column": 3
+      }
+    }},
+    "b": {},
+    "bT": {},
+    "s": {"0": 1},
+    "fnMap": {"0": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 85
+        },
+        "end": {
+          "line": 16,
+          "column": 1
+        }
+      },
+      "decl": {
+        "start": {
+          "line": 4,
+          "column": 24
+        },
+        "end": {
+          "line": 4,
+          "column": 39
+        }
+      },
+      "line": 4,
+      "name": "DashboardLayout"
+    }},
+    "f": {"0": 1},
+    "branchMap": {},
+    "_coverageSchema": "11020577277169172593",
+    "hash": "12479426945768488940"
+  },
+  "/Users/dhruv.agrawal/Downloads/finalll/app/dashboard/page.tsx": {
+    "all": false,
+    "path": "/Users/dhruv.agrawal/Downloads/finalll/app/dashboard/page.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 3,
+          "column": 18
+        },
+        "end": {
+          "line": 3,
+          "column": 23
+        }
+      },
+      "1": {
+        "start": {
+          "line": 5,
+          "column": 2
+        },
+        "end": {
+          "line": 7,
+          "column": 3
+        }
+      },
+      "2": {
+        "start": {
+          "line": 6,
+          "column": 4
+        },
+        "end": {
+          "line": 6,
+          "column": 39
+        }
+      },
+      "3": {
+        "start": {
+          "line": 9,
+          "column": 2
+        },
+        "end": {
+          "line": 9,
+          "column": 39
+        }
+      }
+    },
+    "b": {"0": [
+      0,
+      1
+    ]},
+    "bT": {},
+    "s": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+    },
+    "fnMap": {"0": {
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 40
+        },
+        "end": {
+          "line": 10,
+          "column": 1
+        }
+      },
+      "decl": {
+        "start": {
+          "line": 2,
+          "column": 24
+        },
+        "end": {
+          "line": 2,
+          "column": 37
+        }
+      },
+      "line": 2,
+      "name": "DashboardHome"
+    }},
+    "f": {"0": 1},
+    "branchMap": {"0": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 2
+        },
+        "end": {
+          "line": 7,
+          "column": 3
+        }
+      },
+      "line": 5,
+      "locations": [
+        {
+          "start": {
+            "line": 5,
+            "column": 2
+          },
+          "end": {
+            "line": 7,
+            "column": 3
+          }
+        },
+        {
+          "start": {
+            "line": 5,
+            "column": 2
+          },
+          "end": {
+            "line": 7,
+            "column": 3
+          }
+        }
+      ],
+      "type": "if"
+    }},
+    "_coverageSchema": "11020577277169172593",
+    "hash": "12186243549830109163"
+  },
+  "/Users/dhruv.agrawal/Downloads/finalll/app/components/Header.tsx": {
+    "all": false,
+    "path": "/Users/dhruv.agrawal/Downloads/finalll/app/components/Header.tsx",
+    "statementMap": {"0": {
+      "start": {
+        "line": 5,
+        "column": 2
+      },
+      "end": {
+        "line": 18,
+        "column": 3
+      }
+    }},
+    "b": {},
+    "bT": {},
+    "s": {"0": 1},
+    "fnMap": {"0": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 33
+        },
+        "end": {
+          "line": 19,
+          "column": 1
+        }
+      },
+      "decl": {
+        "start": {
+          "line": 4,
+          "column": 24
+        },
+        "end": {
+          "line": 4,
+          "column": 30
+        }
+      },
+      "line": 4,
+      "name": "Header"
+    }},
+    "f": {"0": 1},
+    "branchMap": {},
+    "_coverageSchema": "11020577277169172593",
+    "hash": "781011575539844341"
+  }
+}

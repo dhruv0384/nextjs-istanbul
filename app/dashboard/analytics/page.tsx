@@ -1,6 +1,8 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { getStats } from './../../../lib/fakeApi'
+import { getStats } from '../../lib/fakeApi'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import unusedFn from '../../lib/unused'
 
 export default function AnalyticsPage() {
   const [data, setData] = useState<number | null>(null)

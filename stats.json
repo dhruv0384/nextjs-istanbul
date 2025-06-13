@@ -1,0 +1,2086 @@
+{
+  "name": "client",
+  "assetsByChunkName": {
+    "main": [
+      "static/chunks/main-63e12200f3ab1947.js"
+    ],
+    "main-app": [
+      "static/chunks/main-app-cc5897c9d1616f5a.js"
+    ],
+    "app/_not-found/page": [
+      "static/chunks/app/_not-found/page-971b76f7010dfe45.js"
+    ],
+    "pages/_app": [
+      "static/chunks/pages/_app-42617b57b114fcac.js"
+    ],
+    "pages/_error": [
+      "static/chunks/pages/_error-cc3f077a18ea1793.js"
+    ],
+    "app/layout": [
+      "static/chunks/app/layout-4a3c6180888bd67c.js"
+    ],
+    "app/about/page": [
+      "static/chunks/app/about/page-c52ecd424bf8f1b9.js"
+    ],
+    "app/contact/page": [
+      "static/chunks/app/contact/page-982bdc59c51764bd.js"
+    ],
+    "app/page": [
+      "static/chunks/app/page-2574e5ba55f6dcb9.js"
+    ],
+    "app/dashboard/layout": [
+      "static/chunks/app/dashboard/layout-07b8ae193ce737db.js"
+    ],
+    "app/dashboard/analytics/page": [
+      "static/chunks/app/dashboard/analytics/page-9c235583e6218427.js"
+    ],
+    "app/dashboard/page": [
+      "static/chunks/app/dashboard/page-77773c21aab404a8.js"
+    ],
+    "webpack": [
+      "static/chunks/webpack-b2afd5d5a3b5034b.js"
+    ],
+    "framework": [
+      "static/chunks/framework-f593a28cde54158e.js"
+    ],
+    "555beee5": [
+      "static/chunks/555beee5-6e1adec5fc240725.js"
+    ],
+    "4bd1b696": [
+      "static/chunks/4bd1b696-52a6696c08e3276c.js"
+    ],
+    "5c27ba2b": [
+      "static/chunks/5c27ba2b-741d43bdb01de99b.js"
+    ],
+    "237a9e98": [
+      "static/chunks/237a9e98-c8bbec233b24e56c.js"
+    ],
+    "12f359d8": [
+      "static/chunks/12f359d8-d26d9847d64184f4.js"
+    ]
+  },
+  "assets": [
+    {
+      "type": "asset",
+      "name": "static/chunks/450-4ae8435341686ac8.js",
+      "size": 2274621,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "4ae8435341686ac8",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 2274621
+      },
+      "chunkNames": [],
+      "chunkIdHints": [
+        "vendors"
+      ],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/main-63e12200f3ab1947.js",
+      "size": 1102561,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "63e12200f3ab1947",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 1102561
+      },
+      "chunkNames": [
+        "main"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/framework-f593a28cde54158e.js",
+      "size": 182764,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "f593a28cde54158e",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 182764
+      },
+      "chunkNames": [
+        "framework"
+      ],
+      "chunkIdHints": [
+        "framework"
+      ],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/4bd1b696-52a6696c08e3276c.js",
+      "size": 168413,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "52a6696c08e3276c",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 168413
+      },
+      "chunkNames": [
+        "4bd1b696"
+      ],
+      "chunkIdHints": [
+        "lib"
+      ],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/polyfills-42372ed130431b0a.js",
+      "size": 112594,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "minimized": true,
+        "size": 112594
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/858-277f8ca76e93e4ca.js",
+      "size": 70373,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "277f8ca76e93e4ca",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 70373
+      },
+      "chunkNames": [],
+      "chunkIdHints": [
+        "vendors"
+      ],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/5c27ba2b-741d43bdb01de99b.js",
+      "size": 68415,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "741d43bdb01de99b",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 68415
+      },
+      "chunkNames": [
+        "5c27ba2b"
+      ],
+      "chunkIdHints": [
+        "lib"
+      ],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/237a9e98-c8bbec233b24e56c.js",
+      "size": 58222,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "c8bbec233b24e56c",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 58222
+      },
+      "chunkNames": [
+        "237a9e98"
+      ],
+      "chunkIdHints": [
+        "lib"
+      ],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/555beee5-6e1adec5fc240725.js",
+      "size": 56367,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "6e1adec5fc240725",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 56367
+      },
+      "chunkNames": [
+        "555beee5"
+      ],
+      "chunkIdHints": [
+        "lib"
+      ],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/12f359d8-d26d9847d64184f4.js",
+      "size": 44884,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "d26d9847d64184f4",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 44884
+      },
+      "chunkNames": [
+        "12f359d8"
+      ],
+      "chunkIdHints": [
+        "lib"
+      ],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/28-989bc0507979a142.js",
+      "size": 20130,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "989bc0507979a142",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 20130
+      },
+      "chunkNames": [],
+      "chunkIdHints": [
+        "vendors"
+      ],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/app/_not-found/page-971b76f7010dfe45.js",
+      "size": 9600,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "971b76f7010dfe45",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 9600
+      },
+      "chunkNames": [
+        "app/_not-found/page"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "server/app/dashboard/analytics/page_client-reference-manifest.js",
+      "size": 6861,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "size": 6861
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "server/app/dashboard/page_client-reference-manifest.js",
+      "size": 6708,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "size": 6708
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "server/app/about/page_client-reference-manifest.js",
+      "size": 6516,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "size": 6516
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "server/app/contact/page_client-reference-manifest.js",
+      "size": 6478,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "size": 6478
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "server/app/_not-found/page_client-reference-manifest.js",
+      "size": 6426,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "size": 6426
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "server/app/page_client-reference-manifest.js",
+      "size": 6351,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "size": 6351
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "app-build-manifest.json",
+      "size": 3890,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "size": 3890
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/webpack-b2afd5d5a3b5034b.js",
+      "size": 3549,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "b2afd5d5a3b5034b",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 3549
+      },
+      "chunkNames": [
+        "webpack"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/app/contact/page-982bdc59c51764bd.js",
+      "size": 3407,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "982bdc59c51764bd",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 3407
+      },
+      "chunkNames": [
+        "app/contact/page"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/app/dashboard/analytics/page-9c235583e6218427.js",
+      "size": 3181,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "9c235583e6218427",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 3181
+      },
+      "chunkNames": [
+        "app/dashboard/analytics/page"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/app/layout-4a3c6180888bd67c.js",
+      "size": 2633,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "4a3c6180888bd67c",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 2633
+      },
+      "chunkNames": [
+        "app/layout"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/app/dashboard/page-77773c21aab404a8.js",
+      "size": 1502,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "77773c21aab404a8",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 1502
+      },
+      "chunkNames": [
+        "app/dashboard/page"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/app/about/page-c52ecd424bf8f1b9.js",
+      "size": 1489,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "c52ecd424bf8f1b9",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 1489
+      },
+      "chunkNames": [
+        "app/about/page"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/app/dashboard/layout-07b8ae193ce737db.js",
+      "size": 1332,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "07b8ae193ce737db",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 1332
+      },
+      "chunkNames": [
+        "app/dashboard/layout"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "build-manifest.json",
+      "size": 1145,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "size": 1145
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "server/middleware-build-manifest.js",
+      "size": 1056,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "minimized": true,
+        "size": 1056
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/538.97c762ec02bac8f0.js",
+      "size": 913,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "contenthash": "97c762ec02bac8f0",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 913
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/KryXdZhcNDpVUAUG3c3XP/_buildManifest.js",
+      "size": 698,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "minimized": true,
+        "size": 698
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/main-app-cc5897c9d1616f5a.js",
+      "size": 525,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "cc5897c9d1616f5a",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 525
+      },
+      "chunkNames": [
+        "main-app"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/pages/_app-42617b57b114fcac.js",
+      "size": 235,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "42617b57b114fcac",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 235
+      },
+      "chunkNames": [
+        "pages/_app"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/pages/_error-cc3f077a18ea1793.js",
+      "size": 232,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "cc3f077a18ea1793",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 232
+      },
+      "chunkNames": [
+        "pages/_error"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/chunks/app/page-2574e5ba55f6dcb9.js",
+      "size": 156,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "chunkhash": "2574e5ba55f6dcb9",
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 156
+      },
+      "chunkNames": [
+        "app/page"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "server/middleware-react-loadable-manifest.js",
+      "size": 151,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "minimized": true,
+        "size": 151
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "react-loadable-manifest.json",
+      "size": 149,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "size": 149
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "server/next-font-manifest.js",
+      "size": 106,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "minimized": true,
+        "size": 106
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "server/next-font-manifest.json",
+      "size": 77,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "size": 77
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/KryXdZhcNDpVUAUG3c3XP/_ssgManifest.js",
+      "size": 77,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "minimized": true,
+        "size": 77
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    },
+    {
+      "type": "asset",
+      "name": "static/css/c94a0930182c5c17.css",
+      "size": 37,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "immutable": true,
+        "contenthash": "c94a0930182c5c17",
+        "size": 37
+      },
+      "chunkNames": [],
+      "chunkIdHints": [
+        "css"
+      ],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": []
+    }
+  ],
+  "chunks": [
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "reason": "split chunk (cache group: defaultVendors)",
+      "size": 80202,
+      "sizes": {
+        "javascript": 80202
+      },
+      "names": [],
+      "idHints": [
+        "vendors"
+      ],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/28-989bc0507979a142.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "989bc0507979a142",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 8,
+          "size": 80202,
+          "sizes": {
+            "javascript": 80202
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "reason": "split chunk (cache group: lib) (name: 12f359d8)",
+      "size": 183958,
+      "sizes": {
+        "javascript": 183958
+      },
+      "names": [
+        "12f359d8"
+      ],
+      "idHints": [
+        "lib"
+      ],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/12f359d8-d26d9847d64184f4.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "d26d9847d64184f4",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 1,
+          "size": 183958,
+          "sizes": {
+            "javascript": 183958
+          }
+        }
+      ]
+    },
+    {
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "recorded": false,
+      "size": 9259,
+      "sizes": {
+        "runtime": 9259
+      },
+      "names": [
+        "webpack"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/webpack-b2afd5d5a3b5034b.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "b2afd5d5a3b5034b",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "runtime modules",
+          "moduleType": "runtime",
+          "filteredChildren": 18,
+          "size": 9259,
+          "sizes": {
+            "runtime": 9259
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 4615,
+      "sizes": {
+        "javascript": 4615
+      },
+      "names": [
+        "app/dashboard/page"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/app/dashboard/page-77773c21aab404a8.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "77773c21aab404a8",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 2,
+          "size": 4615,
+          "sizes": {
+            "javascript": 4615
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 7044,
+      "sizes": {
+        "javascript": 7044
+      },
+      "names": [
+        "app/layout"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/app/layout-4a3c6180888bd67c.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "4a3c6180888bd67c",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 4,
+          "size": 7044,
+          "sizes": {
+            "javascript": 7044
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 4131,
+      "sizes": {
+        "javascript": 4131
+      },
+      "names": [
+        "app/about/page"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/app/about/page-c52ecd424bf8f1b9.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "c52ecd424bf8f1b9",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 2,
+          "size": 4131,
+          "sizes": {
+            "javascript": 4131
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 1169,
+      "sizes": {
+        "javascript": 1169
+      },
+      "names": [
+        "main-app"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/main-app-cc5897c9d1616f5a.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "cc5897c9d1616f5a",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 2,
+          "size": 1169,
+          "sizes": {
+            "javascript": 1169
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "reason": "split chunk (cache group: lib) (name: 4bd1b696)",
+      "size": 517585,
+      "sizes": {
+        "javascript": 517585
+      },
+      "names": [
+        "4bd1b696"
+      ],
+      "idHints": [
+        "lib"
+      ],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/4bd1b696-52a6696c08e3276c.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "52a6696c08e3276c",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 1,
+          "size": 517585,
+          "sizes": {
+            "javascript": 517585
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "reason": "split chunk (cache group: defaultVendors)",
+      "size": 7631548,
+      "sizes": {
+        "javascript": 7631548
+      },
+      "names": [],
+      "idHints": [
+        "vendors"
+      ],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/450-4ae8435341686ac8.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "4ae8435341686ac8",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 257,
+          "size": 7631548,
+          "sizes": {
+            "javascript": 7631548
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "reason": "split chunk (cache group: lib) (name: 555beee5)",
+      "size": 240525,
+      "sizes": {
+        "javascript": 240525
+      },
+      "names": [
+        "555beee5"
+      ],
+      "idHints": [
+        "lib"
+      ],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/555beee5-6e1adec5fc240725.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "6e1adec5fc240725",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 1,
+          "size": 240525,
+          "sizes": {
+            "javascript": 240525
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 27860,
+      "sizes": {
+        "javascript": 27860
+      },
+      "names": [
+        "app/_not-found/page"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/app/_not-found/page-971b76f7010dfe45.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "971b76f7010dfe45",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 3,
+          "size": 27860,
+          "sizes": {
+            "javascript": 27860
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 49,
+      "sizes": {
+        "css/mini-extract": 49
+      },
+      "names": [],
+      "idHints": [
+        "css"
+      ],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/css/c94a0930182c5c17.css"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "f9b7b18161a16a64",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 1,
+          "size": 49,
+          "sizes": {
+            "css/mini-extract": 49
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": false,
+      "entry": false,
+      "recorded": false,
+      "size": 2397,
+      "sizes": {
+        "javascript": 2397
+      },
+      "names": [],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/538.97c762ec02bac8f0.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "cd67a70d594222a6",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 1,
+          "size": 2397,
+          "sizes": {
+            "javascript": 2397
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "reason": "split chunk (cache group: framework) (name: framework)",
+      "size": 553228,
+      "sizes": {
+        "javascript": 553228
+      },
+      "names": [
+        "framework"
+      ],
+      "idHints": [
+        "framework"
+      ],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/framework-f593a28cde54158e.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "f593a28cde54158e",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 10,
+          "size": 553228,
+          "sizes": {
+            "javascript": 553228
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 271,
+      "sizes": {
+        "javascript": 271
+      },
+      "names": [
+        "pages/_app"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/pages/_app-42617b57b114fcac.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "42617b57b114fcac",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 1,
+          "size": 271,
+          "sizes": {
+            "javascript": 271
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "reason": "split chunk (cache group: lib) (name: 5c27ba2b)",
+      "size": 293756,
+      "sizes": {
+        "javascript": 293756
+      },
+      "names": [
+        "5c27ba2b"
+      ],
+      "idHints": [
+        "lib"
+      ],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/5c27ba2b-741d43bdb01de99b.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "741d43bdb01de99b",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 1,
+          "size": 293756,
+          "sizes": {
+            "javascript": 293756
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 277,
+      "sizes": {
+        "javascript": 277
+      },
+      "names": [
+        "pages/_error"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/pages/_error-cc3f077a18ea1793.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "cc3f077a18ea1793",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 1,
+          "size": 277,
+          "sizes": {
+            "javascript": 277
+          }
+        }
+      ]
+    },
+    {
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 10356,
+      "sizes": {
+        "javascript": 10356
+      },
+      "names": [
+        "app/dashboard/analytics/page"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/app/dashboard/analytics/page-9c235583e6218427.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "9c235583e6218427",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": "app-pages-browser",
+          "size": 10246,
+          "sizes": {
+            "javascript": 10246
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/auto|/Users/dhruv.agrawal/Downloads/finalll/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/dhruv.agrawal/Downloads/finalll/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[15].oneOf[6].use[1]!/Users/dhruv.agrawal/Downloads/finalll/app/dashboard/analytics/page.tsx|app-pages-browser|acb7bc19cca741a2",
+          "name": "./app/dashboard/analytics/page.tsx + 1 modules",
+          "nameForCondition": "/Users/dhruv.agrawal/Downloads/finalll/app/dashboard/analytics/page.tsx",
+          "index": 376,
+          "preOrderIndex": 376,
+          "index2": 376,
+          "postOrderIndex": 376,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": true,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/auto|/Users/dhruv.agrawal/Downloads/finalll/node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!|app-pages-browser",
+              "module": "./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!",
+              "moduleName": "./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!",
+              "resolvedModuleIdentifier": "javascript/auto|/Users/dhruv.agrawal/Downloads/finalll/node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!|app-pages-browser",
+              "resolvedModule": "./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!",
+              "type": "import() eager",
+              "active": true,
+              "explanation": "",
+              "userRequest": "/Users/dhruv.agrawal/Downloads/finalll/app/dashboard/analytics/page.tsx"
+            }
+          ],
+          "usedExports": true
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "layer": "app-pages-browser",
+          "size": 110,
+          "sizes": {
+            "javascript": 110
+          },
+          "built": false,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/auto|/Users/dhruv.agrawal/Downloads/finalll/node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!|app-pages-browser",
+          "name": "./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!",
+          "nameForCondition": "",
+          "index": 375,
+          "preOrderIndex": 375,
+          "index2": 377,
+          "postOrderIndex": 377,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": false,
+          "issuer": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": "entry",
+              "active": true,
+              "explanation": "",
+              "userRequest": "next-flight-client-entry-loader?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!",
+              "loc": "app/dashboard/analytics/page"
+            },
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": null,
+              "active": true,
+              "explanation": "used as library export",
+              "userRequest": null
+            }
+          ],
+          "usedExports": true
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 3952790,
+      "sizes": {
+        "javascript": 3952790
+      },
+      "names": [
+        "main"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/main-63e12200f3ab1947.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "63e12200f3ab1947",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 101,
+          "size": 3952790,
+          "sizes": {
+            "javascript": 3952790
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "reason": "split chunk (cache group: lib) (name: 237a9e98)",
+      "size": 232233,
+      "sizes": {
+        "javascript": 232233
+      },
+      "names": [
+        "237a9e98"
+      ],
+      "idHints": [
+        "lib"
+      ],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/237a9e98-c8bbec233b24e56c.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "c8bbec233b24e56c",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 1,
+          "size": 232233,
+          "sizes": {
+            "javascript": 232233
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "reason": "split chunk (cache group: defaultVendors)",
+      "size": 253586,
+      "sizes": {
+        "javascript": 253586
+      },
+      "names": [],
+      "idHints": [
+        "vendors"
+      ],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/858-277f8ca76e93e4ca.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "277f8ca76e93e4ca",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 6,
+          "size": 253586,
+          "sizes": {
+            "javascript": 253586
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 3283,
+      "sizes": {
+        "javascript": 3283
+      },
+      "names": [
+        "app/dashboard/layout"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/app/dashboard/layout-07b8ae193ce737db.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "07b8ae193ce737db",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 2,
+          "size": 3283,
+          "sizes": {
+            "javascript": 3283
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 1,
+      "sizes": {
+        "javascript": 1
+      },
+      "names": [
+        "app/page"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/app/page-2574e5ba55f6dcb9.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "2574e5ba55f6dcb9",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 1,
+          "size": 1,
+          "sizes": {
+            "javascript": 1
+          }
+        }
+      ]
+    },
+    {
+      "rendered": false,
+      "initial": true,
+      "entry": false,
+      "recorded": false,
+      "size": 10328,
+      "sizes": {
+        "javascript": 10328
+      },
+      "names": [
+        "app/contact/page"
+      ],
+      "idHints": [],
+      "runtime": [
+        "webpack"
+      ],
+      "files": [
+        "static/chunks/app/contact/page-982bdc59c51764bd.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "982bdc59c51764bd",
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "type": "cached modules",
+          "cached": true,
+          "filteredChildren": 2,
+          "size": 10328,
+          "sizes": {
+            "javascript": 10328
+          }
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "type": "cached modules",
+      "cached": true,
+      "filteredChildren": 408,
+      "size": 14000821,
+      "sizes": {
+        "javascript": 14000772,
+        "css/mini-extract": 49
+      }
+    },
+    {
+      "type": "runtime modules",
+      "moduleType": "runtime",
+      "filteredChildren": 18,
+      "size": 9259,
+      "sizes": {
+        "runtime": 9259
+      }
+    },
+    {
+      "type": "orphan modules",
+      "orphan": true,
+      "filteredChildren": 1,
+      "size": 4574,
+      "sizes": {
+        "javascript": 4574
+      }
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/auto",
+      "layer": "app-pages-browser",
+      "size": 110,
+      "sizes": {
+        "javascript": 110
+      },
+      "built": false,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/auto|/Users/dhruv.agrawal/Downloads/finalll/node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!|app-pages-browser",
+      "name": "./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!",
+      "nameForCondition": "",
+      "index": 375,
+      "preOrderIndex": 375,
+      "index2": 377,
+      "postOrderIndex": 377,
+      "cacheable": true,
+      "optional": false,
+      "orphan": false,
+      "issuer": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "resolvedModuleIdentifier": null,
+          "resolvedModule": null,
+          "type": "entry",
+          "active": true,
+          "explanation": "",
+          "userRequest": "next-flight-client-entry-loader?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!",
+          "loc": "app/dashboard/analytics/page"
+        },
+        {
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "resolvedModuleIdentifier": null,
+          "resolvedModule": null,
+          "type": null,
+          "active": true,
+          "explanation": "used as library export",
+          "userRequest": null
+        }
+      ],
+      "usedExports": true
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": "app-pages-browser",
+      "size": 10246,
+      "sizes": {
+        "javascript": 10246
+      },
+      "built": true,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/auto|/Users/dhruv.agrawal/Downloads/finalll/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/dhruv.agrawal/Downloads/finalll/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[15].oneOf[6].use[1]!/Users/dhruv.agrawal/Downloads/finalll/app/dashboard/analytics/page.tsx|app-pages-browser|acb7bc19cca741a2",
+      "name": "./app/dashboard/analytics/page.tsx + 1 modules",
+      "nameForCondition": "/Users/dhruv.agrawal/Downloads/finalll/app/dashboard/analytics/page.tsx",
+      "index": 376,
+      "preOrderIndex": 376,
+      "index2": 376,
+      "postOrderIndex": 376,
+      "cacheable": true,
+      "optional": false,
+      "orphan": false,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/auto|/Users/dhruv.agrawal/Downloads/finalll/node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!|app-pages-browser",
+          "module": "./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!",
+          "moduleName": "./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!",
+          "resolvedModuleIdentifier": "javascript/auto|/Users/dhruv.agrawal/Downloads/finalll/node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!|app-pages-browser",
+          "resolvedModule": "./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22%2FUsers%2Fdhruv.agrawal%2FDownloads%2Ffinalll%2Fapp%2Fdashboard%2Fanalytics%2Fpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&server=false!",
+          "type": "import() eager",
+          "active": true,
+          "explanation": "",
+          "userRequest": "/Users/dhruv.agrawal/Downloads/finalll/app/dashboard/analytics/page.tsx"
+        }
+      ],
+      "usedExports": true
+    }
+  ],
+  "entrypoints": {
+    "main": {
+      "name": "main",
+      "assets": [
+        {
+          "name": "static/chunks/webpack-b2afd5d5a3b5034b.js",
+          "size": 3549
+        },
+        {
+          "name": "static/chunks/framework-f593a28cde54158e.js",
+          "size": 182764
+        },
+        {
+          "name": "static/chunks/main-63e12200f3ab1947.js",
+          "size": 1102561
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1288874,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    },
+    "main-app": {
+      "name": "main-app",
+      "assets": [
+        {
+          "name": "static/chunks/webpack-b2afd5d5a3b5034b.js",
+          "size": 3549
+        },
+        {
+          "name": "static/chunks/4bd1b696-52a6696c08e3276c.js",
+          "size": 168413
+        },
+        {
+          "name": "static/chunks/5c27ba2b-741d43bdb01de99b.js",
+          "size": 68415
+        },
+        {
+          "name": "static/chunks/237a9e98-c8bbec233b24e56c.js",
+          "size": 58222
+        },
+        {
+          "name": "static/chunks/12f359d8-d26d9847d64184f4.js",
+          "size": 44884
+        },
+        {
+          "name": "static/chunks/450-4ae8435341686ac8.js",
+          "size": 2274621
+        },
+        {
+          "name": "static/chunks/main-app-cc5897c9d1616f5a.js",
+          "size": 525
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 2618629,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    },
+    "app/_not-found/page": {
+      "name": "app/_not-found/page",
+      "assets": [
+        {
+          "name": "static/chunks/app/_not-found/page-971b76f7010dfe45.js",
+          "size": 9600
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 9600,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    },
+    "pages/_app": {
+      "name": "pages/_app",
+      "assets": [
+        {
+          "name": "static/chunks/pages/_app-42617b57b114fcac.js",
+          "size": 235
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 235,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    },
+    "pages/_error": {
+      "name": "pages/_error",
+      "assets": [
+        {
+          "name": "static/chunks/pages/_error-cc3f077a18ea1793.js",
+          "size": 232
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 232,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    },
+    "app/layout": {
+      "name": "app/layout",
+      "assets": [
+        {
+          "name": "static/css/c94a0930182c5c17.css",
+          "size": 37
+        },
+        {
+          "name": "static/chunks/555beee5-6e1adec5fc240725.js",
+          "size": 56367
+        },
+        {
+          "name": "static/chunks/858-277f8ca76e93e4ca.js",
+          "size": 70373
+        },
+        {
+          "name": "static/chunks/app/layout-4a3c6180888bd67c.js",
+          "size": 2633
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 129410,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    },
+    "app/about/page": {
+      "name": "app/about/page",
+      "assets": [
+        {
+          "name": "static/chunks/28-989bc0507979a142.js",
+          "size": 20130
+        },
+        {
+          "name": "static/chunks/app/about/page-c52ecd424bf8f1b9.js",
+          "size": 1489
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 21619,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    },
+    "app/contact/page": {
+      "name": "app/contact/page",
+      "assets": [
+        {
+          "name": "static/chunks/app/contact/page-982bdc59c51764bd.js",
+          "size": 3407
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 3407,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    },
+    "app/page": {
+      "name": "app/page",
+      "assets": [
+        {
+          "name": "static/chunks/app/page-2574e5ba55f6dcb9.js",
+          "size": 156
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 156,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    },
+    "app/dashboard/layout": {
+      "name": "app/dashboard/layout",
+      "assets": [
+        {
+          "name": "static/chunks/555beee5-6e1adec5fc240725.js",
+          "size": 56367
+        },
+        {
+          "name": "static/chunks/858-277f8ca76e93e4ca.js",
+          "size": 70373
+        },
+        {
+          "name": "static/chunks/app/dashboard/layout-07b8ae193ce737db.js",
+          "size": 1332
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 128072,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    },
+    "app/dashboard/analytics/page": {
+      "name": "app/dashboard/analytics/page",
+      "assets": [
+        {
+          "name": "static/chunks/app/dashboard/analytics/page-9c235583e6218427.js",
+          "size": 3181
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 3181,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    },
+    "app/dashboard/page": {
+      "name": "app/dashboard/page",
+      "assets": [
+        {
+          "name": "static/chunks/app/dashboard/page-77773c21aab404a8.js",
+          "size": 1502
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1502,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0
+    }
+  }
+}

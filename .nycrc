@@ -1,0 +1,6 @@
+{
+  "include": ["app/**/*.{ts,tsx,js,jsx}"],
+  "exclude": [".next/**", "node_modules/**"],
+  "all": true,
+  "reporter": ["text", "html"]
+}
