@@ -1,0 +1,5 @@
+{
+  "java.project.referencedLibraries": [
+    "selenium/libs/**/*.jar"
+  ]
+}
