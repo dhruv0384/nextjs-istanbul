@@ -9,9 +9,10 @@
     "start": "next start",
     "lint": "next lint",
     "testAndMerge": "mkdir -p selenium/out && javac -d selenium/out -cp 'selenium/libs/*' selenium/utils/*.java selenium/testcases/*.java selenium/MainTestRunner.java && java -cp 'selenium/libs/*:selenium/out' selenium.MainTestRunner",
+    "mergeUncoveredFiles": "node scripts/mergeUncoveredFiles.js --module=$npm_config_module",
     "filterCoverage": "node scripts/moduleCoverage.js --module=$npm_config_module",
     "generateModuleReport": "node scripts/generateReport.js --module=$npm_config_module",
-    "testCoverage": "npm run testAndMerge && npm run filterCoverage && npm run generateModuleReport"
+    "testCoverage": "npm run testAndMerge && npm run mergeUncoveredFiles && npm run filterCoverage && npm run generateModuleReport"
   },
   "keywords": [],
   "author": "",

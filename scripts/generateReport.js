@@ -24,26 +24,26 @@ modules.forEach((mod) => {
     return;
   }
 
-  // 2️⃣ Load and map coverage
+  // Load and map coverage
   const raw = JSON.parse(fs.readFileSync(covJson, "utf-8"));
   const coverageMap = libCoverage.createCoverageMap(raw);
 
-  // 3️⃣ Prepare report directory
+  // Prepare report directory
   const reportDir = path.resolve(`coverage/${mod}`);
   fs.mkdirSync(reportDir, { recursive: true });
 
-  // 4️⃣ Create a shared context for HTML
+  //  Create a shared context for HTML
   const htmlContext = libReport.createContext({
     dir: reportDir,
     coverageMap,
     defaultSummarizer: "pkg",
   });
 
-  // 5️⃣ Generate HTML report
+  //  Generate HTML report
   reports.create("html").execute(htmlContext);
 
-  // 6️⃣ Now generate and capture text-summary
-  // Create a fresh context so we don't overwrite HTML context
+  // Now generate and capture text-summary
+//   Create a fresh context so we don't overwrite HTML context
   const textContext = libReport.createContext({
     dir: reportDir,
     coverageMap,
@@ -64,7 +64,7 @@ modules.forEach((mod) => {
   // Execute text-summary
   reports.create("text-summary").execute(textContext);
 
-  // 7️⃣ Extract raw counts + percentages
+  // Extract raw counts + percentages
   const sum = coverageMap.getCoverageSummary().toJSON();
   summaryRows.push({
     module: mod,
@@ -76,10 +76,10 @@ modules.forEach((mod) => {
     textSummary: textOutput.trim(),
   });
 
-  console.log(`✅ Generated reports for '${mod}'`);
+  console.log(`Generated reports for '${mod}'`);
 });
 
-// 8️⃣ Build master summary index.html
+// Build master summary index.html
 const masterDir = path.resolve("coverage");
 fs.mkdirSync(masterDir, { recursive: true });
 
@@ -129,11 +129,10 @@ const masterHtml = `
     </thead>
     <tbody>${tableRows}</tbody>
   </table>
-  <h2>📝 Detailed Text Summaries</h2>
-  ${textSections}
+
 </body>
 </html>
 `;
 
 fs.writeFileSync(path.join(masterDir, "index.html"), masterHtml, "utf-8");
-console.log(`✅ Master summary at: coverage/index.html`);
+console.log(`Master summary at: coverage/index.html`);

@@ -1,4 +1,4 @@
 {
   "cfm": ["**/modules/cfm/**", "**/pages/cfm/**"],
-  "calendar": ["**/modules/calendar/**", "**/pages/calendar/**"]
+  "calendar": ["**/modules/calendar/**", "**/pages/calendar/**", "**/src/components/**"]
 }
