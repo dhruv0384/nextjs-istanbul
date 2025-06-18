@@ -1,11 +1,15 @@
+package selenium;
+import testcases.*;
+import utils.*;
+
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-import testcases.TestDashboard;
-import testcases.TestLoginFlow;
-import testcases.TestAdminPage;
-import testcases.TestCFMFeedbackPage;
-import testcases.TestCalendarModule;
+// import testcases.TestDashboard;
+// import testcases.TestLoginFlow;
+// import testcases.TestAdminPage;
+// import testcases.TestCFMFeedbackPage;
+// import testcases.TestCalendarModule;
 
 public class MainTestRunner {
     public static void main(String[] args) {
@@ -25,8 +29,5 @@ public class MainTestRunner {
             }
             System.out.println("✅ Tests run: " + result.getRunCount() + ", Failures: " + result.getFailureCount());
         }
-
-        // Write merged result at the end
-        // CoverageUtils.writeMergedCoverageToFile();
     }
 }

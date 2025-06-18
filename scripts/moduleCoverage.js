@@ -1,53 +1,34 @@
 const fs = require("fs");
 const path = require("path");
-const { execSync } = require("child_process");
+const { minimatch } = require("minimatch");
 
-// module mapping
-const moduleMapping = {
-  calendar: "src/modules/calendar", 
-//   admin: "src/modules/admin",
-  cfm: "src/modules/cfm",
-};
-
-// Loading merged file
-const mergedCoveragePath = path.resolve(".nyc_output/out.json");
-if (!fs.existsSync(mergedCoveragePath)) {
-  console.error("Merged coverage file not found: .nyc_output/out.json");
+const arg = process.argv.find((arg) => arg.startsWith("--module="));
+if (!arg) {
+  console.error("Please provide --module=<name1,name2>");
   process.exit(1);
 }
-const mergedCoverage = JSON.parse(fs.readFileSync(mergedCoveragePath, "utf-8"));
+const modules = arg.split("=")[1].split(",");
+const moduleMapping = require("./moduleMapping.json");
+const rawCoverage = JSON.parse(fs.readFileSync(".nyc_output/out.json", "utf-8"));
 
-// Create module-specific outputs
-for (const [moduleName, modulePath] of Object.entries(moduleMapping)) {
-  const filteredCoverage = {};
-
-  for (const filePath in mergedCoverage) {
-    if (filePath.includes(modulePath)) {
-      filteredCoverage[filePath] = mergedCoverage[filePath];
-    }
-  }
-
-  if (Object.keys(filteredCoverage).length === 0) {
-    console.warn(`No files matched for module: ${moduleName}`);
+for (const mod of modules) {
+  const patterns = moduleMapping[mod];
+  if (!patterns) {
+    console.warn(`No mapping found for module: ${mod}`);
     continue;
   }
 
-  const nycOutputDir = path.resolve(`.nyc_output_${moduleName}`);
-  fs.mkdirSync(nycOutputDir, { recursive: true });
-
-  const outJsonPath = path.join(nycOutputDir, "out.json");
-  fs.writeFileSync(outJsonPath, JSON.stringify(filteredCoverage, null, 2));
-  console.log(`Created filtered coverage for ${moduleName} in ${outJsonPath}`);
-
-  // 4. Run NYC report for this module
-  const reportDir = `coverage/${moduleName}`;
-  try {
-    execSync(
-      `npx nyc report --reporter=html --report-dir=${reportDir} --temp-dir=${nycOutputDir}`,
-      { stdio: "inherit" }
-    );
-    console.log(`📊 HTML report generated for module ${moduleName} at ${reportDir}/index.html\n`);
-  } catch (err) {
-    console.error(`❌ Failed to generate report for ${moduleName}`, err);
+  const filtered = {};
+  for (const file in rawCoverage) {
+    const normalizedFile = file.replace(/\\/g, "/");
+    if (patterns.some((pattern) => minimatch(normalizedFile, pattern))) {
+      filtered[file] = rawCoverage[file];
+    }
   }
+
+  const outputDir = path.resolve(`module-coverage/${mod}`);
+  fs.mkdirSync(outputDir, { recursive: true });
+  fs.writeFileSync(`${outputDir}/coverage-final.json`, JSON.stringify(filtered, null, 2));
+
+  console.log(`✅ Saved filtered coverage to ${outputDir}/coverage-final.json`);
 }

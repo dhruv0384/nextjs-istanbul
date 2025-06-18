@@ -47,10 +47,10 @@
     "b": {},
     "bT": {},
     "s": {
-      "0": 2,
-      "1": 2,
-      "2": 4,
-      "3": 4
+      "0": 1,
+      "1": 1,
+      "2": 2,
+      "3": 2
     },
     "fnMap": {
       "0": {
@@ -103,12 +103,25 @@
       }
     },
     "f": {
-      "0": 2,
-      "1": 4
+      "0": 1,
+      "1": 2
     },
     "branchMap": {},
     "_coverageSchema": "11020577277169172593",
     "hash": "14332156786203786010"
+  },
+  "/Users/dhruv.agrawal/Downloads/next_modular_app/src/pages/cfm/index.tsx": {
+    "all": false,
+    "path": "/Users/dhruv.agrawal/Downloads/next_modular_app/src/pages/cfm/index.tsx",
+    "statementMap": {},
+    "b": {},
+    "bT": {},
+    "s": {},
+    "fnMap": {},
+    "f": {},
+    "branchMap": {},
+    "_coverageSchema": "11020577277169172593",
+    "hash": "13745959796790962325"
   },
   "/Users/dhruv.agrawal/Downloads/next_modular_app/src/modules/cfm/hooks/useFeedbackData.ts": {
     "all": false,
@@ -178,12 +191,12 @@
     "b": {},
     "bT": {},
     "s": {
-      "0": 2,
-      "1": 4,
-      "2": 4,
-      "3": 2,
-      "4": 2,
-      "5": 4
+      "0": 1,
+      "1": 2,
+      "2": 2,
+      "3": 1,
+      "4": 1,
+      "5": 2
     },
     "fnMap": {
       "0": {
@@ -260,9 +273,9 @@
       }
     },
     "f": {
-      "0": 4,
-      "1": 2,
-      "2": 2
+      "0": 2,
+      "1": 1,
+      "2": 1
     },
     "branchMap": {},
     "_coverageSchema": "11020577277169172593",
@@ -296,8 +309,8 @@
     "b": {},
     "bT": {},
     "s": {
-      "0": 4,
-      "1": 6
+      "0": 2,
+      "1": 3
     },
     "fnMap": {
       "0": {
@@ -350,8 +363,8 @@
       }
     },
     "f": {
-      "0": 4,
-      "1": 6
+      "0": 2,
+      "1": 3
     },
     "branchMap": {},
     "_coverageSchema": "11020577277169172593",

@@ -367,5 +367,18 @@
     },
     "_coverageSchema": "11020577277169172593",
     "hash": "13334199762574282799"
+  },
+  "/Users/dhruv.agrawal/Downloads/next_modular_app/src/pages/calendar/index.tsx": {
+    "all": false,
+    "path": "/Users/dhruv.agrawal/Downloads/next_modular_app/src/pages/calendar/index.tsx",
+    "statementMap": {},
+    "b": {},
+    "bT": {},
+    "s": {},
+    "fnMap": {},
+    "f": {},
+    "branchMap": {},
+    "_coverageSchema": "11020577277169172593",
+    "hash": "15774230488564089994"
   }
 }

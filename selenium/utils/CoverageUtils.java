@@ -40,7 +40,7 @@ public class CoverageUtils {
 
             runShellCommand("npx nyc merge per-test-coverage coverage/coverage-final.json");
             runShellCommand("mkdir -p ../.nyc_output && cp coverage/coverage-final.json ../.nyc_output/out.json");
-            runShellCommand("npx nyc report --report-dir=coverage --reporter=html");
+            // runShellCommand("npx nyc report --report-dir=coverage --reporter=html");
 
             System.out.println("📦 Final merged coverage + HTML report updated");
 

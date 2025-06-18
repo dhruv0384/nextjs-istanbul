@@ -7,7 +7,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "testAndMerge": "mkdir -p selenium/out && javac -d selenium/out -cp 'selenium/libs/*' selenium/utils/*.java selenium/testcases/*.java selenium/MainTestRunner.java && java -cp 'selenium/libs/*:selenium/out' selenium.MainTestRunner",
+    "filterCoverage": "MODULE=$MODULE node scripts/moduleCoverage.js",
+    "generateModuleReport": "MODULE=$MODULE node scripts/generateReport.js",
+    "testCoverage": "npm run testAndMerge && npm run filterCoverage && npm run generateModuleReport"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +20,6 @@
   "dependencies": {
     "@swc/cli": "^0.7.7",
     "@swc/core": "^1.12.1",
-    "istanbul-reports": "^3.1.7",
     "next": "^15.3.3",
     "nyc": "^17.1.0",
     "react": "^19.1.0",
@@ -29,6 +32,11 @@
   "devDependencies": {
     "@types/node": "^24.0.1",
     "@types/react": "^19.1.8",
+    "cross-env": "^7.0.3",
+    "istanbul-lib-coverage": "^3.2.2",
+    "istanbul-lib-report": "^3.0.1",
+    "istanbul-reports": "^3.1.7",
+    "minimatch": "^10.0.3",
     "typescript": "^5.8.3"
   }
 }

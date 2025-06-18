@@ -1,0 +1,373 @@
+{
+  "/Users/dhruv.agrawal/Downloads/next_modular_app/src/modules/cfm/CFMDashboard.tsx": {
+    "all": false,
+    "path": "/Users/dhruv.agrawal/Downloads/next_modular_app/src/modules/cfm/CFMDashboard.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 6,
+          "column": 22
+        },
+        "end": {
+          "line": 6,
+          "column": 73
+        }
+      },
+      "1": {
+        "start": {
+          "line": 6,
+          "column": 36
+        },
+        "end": {
+          "line": 6,
+          "column": 72
+        }
+      },
+      "2": {
+        "start": {
+          "line": 9,
+          "column": 23
+        },
+        "end": {
+          "line": 9,
+          "column": 40
+        }
+      },
+      "3": {
+        "start": {
+          "line": 11,
+          "column": 2
+        },
+        "end": {
+          "line": 16,
+          "column": 4
+        }
+      }
+    },
+    "b": {},
+    "bT": {},
+    "s": {
+      "0": 2,
+      "1": 2,
+      "2": 3,
+      "3": 3
+    },
+    "fnMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 36
+          },
+          "end": {
+            "line": 6,
+            "column": 72
+          }
+        },
+        "decl": {
+          "start": {
+            "line": 6,
+            "column": 30
+          },
+          "end": {
+            "line": 6,
+            "column": 72
+          }
+        },
+        "line": 6,
+        "name": "(anonymous_0)"
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 39
+          },
+          "end": {
+            "line": 17,
+            "column": 1
+          }
+        },
+        "decl": {
+          "start": {
+            "line": 8,
+            "column": 24
+          },
+          "end": {
+            "line": 8,
+            "column": 36
+          }
+        },
+        "line": 8,
+        "name": "CFMDashboard"
+      }
+    },
+    "f": {
+      "0": 2,
+      "1": 3
+    },
+    "branchMap": {},
+    "_coverageSchema": "11020577277169172593",
+    "hash": "14332156786203786010"
+  },
+  "/Users/dhruv.agrawal/Downloads/next_modular_app/src/pages/cfm/index.tsx": {
+    "all": false,
+    "path": "/Users/dhruv.agrawal/Downloads/next_modular_app/src/pages/cfm/index.tsx",
+    "statementMap": {},
+    "b": {},
+    "bT": {},
+    "s": {},
+    "fnMap": {},
+    "f": {},
+    "branchMap": {},
+    "_coverageSchema": "11020577277169172593",
+    "hash": "13745959796790962325"
+  },
+  "/Users/dhruv.agrawal/Downloads/next_modular_app/src/modules/cfm/hooks/useFeedbackData.ts": {
+    "all": false,
+    "path": "/Users/dhruv.agrawal/Downloads/next_modular_app/src/modules/cfm/hooks/useFeedbackData.ts",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 5,
+          "column": 31
+        },
+        "end": {
+          "line": 16,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 6,
+          "column": 34
+        },
+        "end": {
+          "line": 6,
+          "column": 56
+        }
+      },
+      "2": {
+        "start": {
+          "line": 8,
+          "column": 2
+        },
+        "end": {
+          "line": 13,
+          "column": 9
+        }
+      },
+      "3": {
+        "start": {
+          "line": 10,
+          "column": 4
+        },
+        "end": {
+          "line": 12,
+          "column": 13
+        }
+      },
+      "4": {
+        "start": {
+          "line": 11,
+          "column": 6
+        },
+        "end": {
+          "line": 11,
+          "column": 68
+        }
+      },
+      "5": {
+        "start": {
+          "line": 15,
+          "column": 2
+        },
+        "end": {
+          "line": 15,
+          "column": 22
+        }
+      }
+    },
+    "b": {},
+    "bT": {},
+    "s": {
+      "0": 2,
+      "1": 3,
+      "2": 3,
+      "3": 2,
+      "4": 1,
+      "5": 3
+    },
+    "fnMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 37
+          },
+          "end": {
+            "line": 16,
+            "column": 1
+          }
+        },
+        "decl": {
+          "start": {
+            "line": 5,
+            "column": 31
+          },
+          "end": {
+            "line": 16,
+            "column": 1
+          }
+        },
+        "line": 5,
+        "name": "(anonymous_0)"
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 18
+          },
+          "end": {
+            "line": 13,
+            "column": 3
+          }
+        },
+        "decl": {
+          "start": {
+            "line": 8,
+            "column": 12
+          },
+          "end": {
+            "line": 13,
+            "column": 3
+          }
+        },
+        "line": 8,
+        "name": "(anonymous_1)"
+      },
+      "2": {
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 21
+          },
+          "end": {
+            "line": 12,
+            "column": 5
+          }
+        },
+        "decl": {
+          "start": {
+            "line": 10,
+            "column": 15
+          },
+          "end": {
+            "line": 12,
+            "column": 5
+          }
+        },
+        "line": 10,
+        "name": "(anonymous_2)"
+      }
+    },
+    "f": {
+      "0": 3,
+      "1": 2,
+      "2": 1
+    },
+    "branchMap": {},
+    "_coverageSchema": "11020577277169172593",
+    "hash": "8779604483788723202"
+  },
+  "/Users/dhruv.agrawal/Downloads/next_modular_app/src/modules/cfm/components/FeedbackModal.tsx": {
+    "all": false,
+    "path": "/Users/dhruv.agrawal/Downloads/next_modular_app/src/modules/cfm/components/FeedbackModal.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 8,
+          "column": 2
+        },
+        "end": {
+          "line": 17,
+          "column": 4
+        }
+      },
+      "1": {
+        "start": {
+          "line": 12,
+          "column": 34
+        },
+        "end": {
+          "line": 14,
+          "column": 9
+        }
+      }
+    },
+    "b": {},
+    "bT": {},
+    "s": {
+      "0": 3,
+      "1": 3
+    },
+    "fnMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 59
+          },
+          "end": {
+            "line": 18,
+            "column": 1
+          }
+        },
+        "decl": {
+          "start": {
+            "line": 7,
+            "column": 24
+          },
+          "end": {
+            "line": 7,
+            "column": 37
+          }
+        },
+        "line": 7,
+        "name": "FeedbackModal"
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 12,
+            "column": 34
+          },
+          "end": {
+            "line": 14,
+            "column": 9
+          }
+        },
+        "decl": {
+          "start": {
+            "line": 12,
+            "column": 22
+          },
+          "end": {
+            "line": 14,
+            "column": 9
+          }
+        },
+        "line": 12,
+        "name": "(anonymous_1)"
+      }
+    },
+    "f": {
+      "0": 3,
+      "1": 3
+    },
+    "branchMap": {},
+    "_coverageSchema": "11020577277169172593",
+    "hash": "16773848038310892249"
+  }
+}
