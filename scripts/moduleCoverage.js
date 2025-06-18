@@ -9,7 +9,7 @@ if (!arg) {
 }
 const modules = arg.split("=")[1].split(",");
 const moduleMapping = require("./moduleMapping.json");
-const rawCoverage = JSON.parse(fs.readFileSync(".nyc_output/out.json", "utf-8"));
+const rawCoverage = JSON.parse(fs.readFileSync("coverage/coverage-final.json", "utf-8"));
 
 for (const mod of modules) {
   const patterns = moduleMapping[mod];

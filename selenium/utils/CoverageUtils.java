@@ -39,7 +39,7 @@ public class CoverageUtils {
             System.out.println("📄 Per-test coverage written to: " + perTestPath.toAbsolutePath());
 
             runShellCommand("npx nyc merge per-test-coverage coverage/coverage-final.json");
-            runShellCommand("mkdir -p ../.nyc_output && cp coverage/coverage-final.json ../.nyc_output/out.json");
+            // runShellCommand("mkdir -p ../.nyc_output && cp coverage/coverage-final.json ../.nyc_output/out.json");
             // runShellCommand("npx nyc report --report-dir=coverage --reporter=html");
 
             System.out.println("📦 Final merged coverage + HTML report updated");
