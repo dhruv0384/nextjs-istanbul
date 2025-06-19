@@ -12,7 +12,7 @@
     "mergeUncoveredFiles": "node scripts/mergeUncoveredFiles.js --module=$npm_config_module",
     "filterCoverage": "node scripts/moduleCoverage.js --module=$npm_config_module",
     "generateModuleReport": "node scripts/generateReport.js --module=$npm_config_module",
-    "testCoverage": "npm run testAndMerge && npm run mergeUncoveredFiles && npm run filterCoverage && npm run generateModuleReport"
+    "testCoverage": "npm run testAndMerge && npm run mergeUncoveredFiles && npm run filterCoverage && npm run generateModuleReport && open coverage/index.html"
   },
   "keywords": [],
   "author": "",
@@ -33,11 +33,14 @@
   "devDependencies": {
     "@types/node": "^24.0.1",
     "@types/react": "^19.1.8",
+    "autoprefixer": "^10.4.21",
     "cross-env": "^7.0.3",
     "istanbul-lib-coverage": "^3.2.2",
     "istanbul-lib-report": "^3.0.1",
     "istanbul-reports": "^3.1.7",
     "minimatch": "^10.0.3",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.10",
     "typescript": "^5.8.3"
   }
 }
