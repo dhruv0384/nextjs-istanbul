@@ -78,12 +78,12 @@
     "bT": {},
     "s": {
       "0": 1,
-      "1": 1,
-      "2": 1,
+      "1": 0,
+      "2": 0,
       "3": 1,
-      "4": 1,
-      "5": 1,
-      "6": 1
+      "4": 0,
+      "5": 0,
+      "6": 0
     },
     "fnMap": {
       "0": {
@@ -184,185 +184,59 @@
       }
     },
     "f": {
-      "0": 1,
-      "1": 1,
-      "2": 1,
-      "3": 1
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
     },
     "branchMap": {},
     "_coverageSchema": "11020577277169172593",
     "hash": "8677617597940901619"
   },
-  "/Users/dhruv.agrawal/Downloads/next_modular_app/src/modules/calendar/components/CalendarModal.tsx": {
+  "/Users/dhruv.agrawal/Downloads/next_modular_app/src/pages/_app.tsx": {
     "all": false,
-    "path": "/Users/dhruv.agrawal/Downloads/next_modular_app/src/modules/calendar/components/CalendarModal.tsx",
-    "statementMap": {
-      "0": {
+    "path": "/Users/dhruv.agrawal/Downloads/next_modular_app/src/pages/_app.tsx",
+    "statementMap": {"0": {
+      "start": {
+        "line": 4,
+        "column": 2
+      },
+      "end": {
+        "line": 4,
+        "column": 37
+      }
+    }},
+    "b": {},
+    "bT": {},
+    "s": {"0": 0},
+    "fnMap": {"0": {
+      "loc": {
         "start": {
-          "line": 5,
-          "column": 22
+          "line": 3,
+          "column": 41
         },
         "end": {
-          "line": 16,
+          "line": 5,
           "column": 1
         }
       },
-      "1": {
+      "decl": {
         "start": {
-          "line": 6,
-          "column": 26
+          "line": 3,
+          "column": 9
         },
         "end": {
-          "line": 6,
-          "column": 40
+          "line": 3,
+          "column": 14
         }
       },
-      "2": {
-        "start": {
-          "line": 8,
-          "column": 2
-        },
-        "end": {
-          "line": 8,
-          "column": 25
-        }
-      },
-      "3": {
-        "start": {
-          "line": 8,
-          "column": 13
-        },
-        "end": {
-          "line": 8,
-          "column": 25
-        }
-      },
-      "4": {
-        "start": {
-          "line": 10,
-          "column": 2
-        },
-        "end": {
-          "line": 15,
-          "column": 4
-        }
-      },
-      "5": {
-        "start": {
-          "line": 13,
-          "column": 29
-        },
-        "end": {
-          "line": 13,
-          "column": 43
-        }
-      }
-    },
-    "b": {"0": [
-      1,
-      1
-    ]},
-    "bT": {},
-    "s": {
-      "0": 1,
-      "1": 2,
-      "2": 2,
-      "3": 1,
-      "4": 1,
-      "5": 1
-    },
-    "fnMap": {
-      "0": {
-        "loc": {
-          "start": {
-            "line": 5,
-            "column": 28
-          },
-          "end": {
-            "line": 16,
-            "column": 1
-          }
-        },
-        "decl": {
-          "start": {
-            "line": 5,
-            "column": 22
-          },
-          "end": {
-            "line": 16,
-            "column": 1
-          }
-        },
-        "line": 5,
-        "name": "(anonymous_0)"
-      },
-      "1": {
-        "loc": {
-          "start": {
-            "line": 13,
-            "column": 29
-          },
-          "end": {
-            "line": 13,
-            "column": 43
-          }
-        },
-        "decl": {
-          "start": {
-            "line": 13,
-            "column": 23
-          },
-          "end": {
-            "line": 13,
-            "column": 43
-          }
-        },
-        "line": 13,
-        "name": "(anonymous_1)"
-      }
-    },
-    "f": {
-      "0": 2,
-      "1": 1
-    },
-    "branchMap": {"0": {
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 2
-        },
-        "end": {
-          "line": 8,
-          "column": 25
-        }
-      },
-      "line": 8,
-      "locations": [
-        {
-          "start": {
-            "line": 8,
-            "column": 2
-          },
-          "end": {
-            "line": 8,
-            "column": 25
-          }
-        },
-        {
-          "start": {
-            "line": 8,
-            "column": 2
-          },
-          "end": {
-            "line": 8,
-            "column": 25
-          }
-        }
-      ],
-      "type": "if"
+      "line": 3,
+      "name": "MyApp"
     }},
+    "f": {"0": 0},
+    "branchMap": {},
     "_coverageSchema": "11020577277169172593",
-    "hash": "13334199762574282799"
+    "hash": "1530950793251749260"
   },
   "/Users/dhruv.agrawal/Downloads/next_modular_app/src/pages/calendar/index.tsx": {
     "all": false,

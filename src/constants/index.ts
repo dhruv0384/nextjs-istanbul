@@ -1,2 +1,2 @@
-export const APP_NAME = 'Next Complex App';
+export const APP_NAME = 'Next App';
 export const UNUSED_CONSTANT = 'This is not used anywhere';

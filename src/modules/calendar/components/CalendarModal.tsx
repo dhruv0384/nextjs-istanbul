@@ -2,17 +2,31 @@
 
 import { useState } from 'react';
 
-const CalendarModal = () => {
-  const [open, setOpen] = useState(true);
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
-  if (!open) return null;
+import { Button } from "@/components/ui/button";
 
+export default function CalendarModal() {
   return (
-    <div style={{ border: '1px solid black', padding: 20 }}>
-      <h2>Calendar Modal</h2>
-      <button onClick={() => setOpen(false)}>Close</button>
-    </div>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button>Open Calendar Modal</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Calendar Event</DialogTitle>
+        </DialogHeader>
+        <div>
+          <p>This is the modal content — You have an upcoming event.</p>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
-};
-
-export default CalendarModal;
+}
