@@ -14,7 +14,7 @@ const SRC_DIR = path.join(ROOT_DIR, "src");
 const COVERAGE_FINAL = path.join(ROOT_DIR, "coverage/coverage-final.json");
 const MODULE_MAPPING_PATH = path.join(__dirname, "moduleMapping.json");
 
-// Load module mappings (as glob patterns)
+// Load module mappings
 const moduleMapping = JSON.parse(fs.readFileSync(MODULE_MAPPING_PATH, "utf-8"));
 
 async function instrumentFile(filePath) {
@@ -89,7 +89,7 @@ async function run() {
 
   const selectedModules = moduleArg.split("=")[1].split(",");
 
-  // Load existing coverage-final.json (if exists)
+  // Load existing coverage-final.json
   const existingCoverageMap = fs.existsSync(COVERAGE_FINAL)
     ? createCoverageMap(JSON.parse(fs.readFileSync(COVERAGE_FINAL, "utf-8")))
     : createCoverageMap({});
@@ -102,7 +102,7 @@ async function run() {
 
   // Merge raw data using .toJSON() to avoid issues
   const merged = createCoverageMap(existingCoverageMap.toJSON());
-  merged.merge(newCoverageMap.toJSON()); // <- correct use of merge on raw coverage data
+  merged.merge(newCoverageMap.toJSON());
 
   // Write back to file
   fs.writeFileSync(COVERAGE_FINAL, JSON.stringify(merged.toJSON(), null, 2));

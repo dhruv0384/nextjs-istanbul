@@ -37,11 +37,11 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{APP_NAME} Dashboard</title>
+        <title>Next App Dashboard</title>
       </Head>
       <main className="w-screen h-screen flex flex-col items-center justify-center min-h-screen p-6 bg-gray-50 dark:bg-background text-center">
         <Card className="w-full max-w-xl p-6 space-y-4 shadow-xl">
-          <h1 className="text-3xl font-bold">{APP_NAME} Dashboard</h1>
+          <h1 className="text-3xl font-bold">Next App Dashboard</h1>
           <p className="text-muted-foreground">
             You have visited this page <strong>{visits}</strong> times.
           </p>

@@ -5,20 +5,19 @@ import utils.*;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-// import testcases.TestDashboard;
-// import testcases.TestLoginFlow;
-// import testcases.TestAdminPage;
-// import testcases.TestCFMFeedbackPage;
-// import testcases.TestCalendarModule;
+
+import junit.framework.Test;
 
 public class MainTestRunner {
     public static void main(String[] args) {
         Class<?>[] tests = {
-            TestDashboard.class,
-            TestLoginFlow.class,
-            TestAdminPage.class,
-            TestCalendarModule.class,
-            TestCFMFeedbackPage.class
+            TestCalendarPageLoad.class,
+            TestAssistantToggle.class,
+            TestModalRendering.class,
+            TestFeedbackModalOpenClose.class,
+            TestToggleRawFeedback.class,
+            TestNavigationLinks.class,
+            TestLazyMessage.class,
         };
 
         for (Class<?> testClass : tests) {

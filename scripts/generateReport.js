@@ -6,7 +6,7 @@ const libReport = require("istanbul-lib-report");
 const reports = require("istanbul-reports");
 const { Writable } = require("stream");
 
-// 1️⃣ Parse modules from CLI
+// Parsing modules from CLI
 const arg = process.argv.find((a) => a.startsWith("--module="));
 if (!arg) {
   console.error("❌ Please provide --module=<name1,name2>");
@@ -28,22 +28,20 @@ modules.forEach((mod) => {
   const raw = JSON.parse(fs.readFileSync(covJson, "utf-8"));
   const coverageMap = libCoverage.createCoverageMap(raw);
 
-  // Prepare report directory
   const reportDir = path.resolve(`coverage/${mod}`);
   fs.mkdirSync(reportDir, { recursive: true });
 
-  //  Create a shared context for HTML
+  //  context for HTML report
   const htmlContext = libReport.createContext({
     dir: reportDir,
     coverageMap,
     defaultSummarizer: "pkg",
   });
 
-  //  Generate HTML report
   reports.create("html").execute(htmlContext);
 
-  // Now generate and capture text-summary
-//   Create a fresh context so we don't overwrite HTML context
+  // Text report
+
   const textContext = libReport.createContext({
     dir: reportDir,
     coverageMap,
@@ -58,10 +56,9 @@ modules.forEach((mod) => {
     }
   });
 
-  // Override the writer on the context so text-summary uses it
+
   textContext.writer = writer;
 
-  // Execute text-summary
   reports.create("text-summary").execute(textContext);
 
   // Extract raw counts + percentages
