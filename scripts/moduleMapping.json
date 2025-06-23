@@ -1,0 +1,4 @@
+{
+  "cfm": ["**/modules/cfm/**", "**/pages/cfm/**"],
+  "calendar": ["**/modules/calendar/**", "**/pages/calendar/**", "**/src/components/**"]
+}

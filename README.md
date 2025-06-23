@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Code Coverage Tool for JavaScript + Selenium
 
-## Getting Started
+This project provides a structured and modular approach to measuring code coverage in a Next.js application using Selenium-based end-to-end (E2E) testing. It enables per-module test coverage reporting and supports manual instrumentation for uncovering files not touched by default test runs.
 
-First, run the development server:
+## Setup Instructions
+
+1. Install Dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+    npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Setup Java Environment:
+   Ensure chromedriver is accessible and Java is installed on your system.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Confiure the modules
+   Define file glob patterns for each logical module in moduleMapping.json:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```json
+{
+  "calendar": ["src/calendar/**"],
+  "cfm": ["src/cfm/**"]
+}
+```
 
-## Learn More
+## CLI Commands
 
-To learn more about Next.js, take a look at the following resources:
+These commands are defined in the package.json and can be run via npm run <command>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. testAndMerge
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+    npm run testAndMerge
+```
 
-## Deploy on Vercel
+- Compiles and runs all Selenium tests.
+- Captures per-test coverage using **coverage** and merges them into coverage/coverage-final.json.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. mergeUncoveredFiles
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+    npm run mergeUncoveredFiles --module=<modulename>
+```
+
+- Manually instruments and adds uncovered but relevant files (not hit by Selenium tests) to the overall coverage.
+- Example
+
+```bash
+    npm run mergeUncoveredFiles --module=cfm,calendar
+```
+
+3. filterCoverage
+
+```bash
+    npm run filterCoverage --module=<modulename>
+```
+
+- Filters coverage-final.json to extract only the files belonging to the specified module.
+- Output: module-coverage/<modulename>/coverage-final.json
+
+4. generateModuleReport
+
+```bash
+    npm run generateModuleReport --module=<modulename>
+```
+
+- Generates an HTML report and a text-summary for the selected module.
+- Output:
+  - HTML: coverage/<modulename>/index.html
+  - Summary: embedded inside coverage/index.html
+
+5. testCoverage
+
+```bash
+    npm run testCoverage --module=<modulename>
+```
+
+- Runs the entire pipeline:
+  - Run tests + extract coverage
+  - Manually instrument & add uncovered files
+  - Filter module-specific coverage
+  - Generate report
+  - Auto-opens the coverage dashboard in browser
+
+## Output
+
+After running testCoverage, navigate to:
+
+```bash
+    coverage/index.html
+```
+
+You’ll find:
+
+- A master table summarizing statements, branches, functions, and line coverage per module
+
+- Clickable links to individual module reports
+
+- Detailed reports (per file) inside each module folder
+
+## Notes
+
+- Make sure you’ve run your Next.js app (npm run dev) on http://localhost:3000 before running Selenium tests.
+
+- Ensure that chromedriver matches your local Chrome version.
+
+- Module mapping patterns must accurately match the file paths you want to include in a module.

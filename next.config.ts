@@ -1,8 +1,18 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  productionBrowserSourceMaps: true,
+  experimental: {
+    swcPlugins: [
+      [
+        'swc-plugin-coverage-instrument',
+        {
+          coverageVariable: '__coverage__',
+          compact: false,
+          reportLogic: true,
+        },
+      ],
+    ],
+  },
 };
 
 export default nextConfig;
