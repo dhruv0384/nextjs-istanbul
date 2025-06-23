@@ -12,9 +12,9 @@ type GlobalStore = {
   addEvent: (e: CalendarEvent) => void;
 };
 
-export const useGlobalStore = create<GlobalStore>((set) => ({
+export const useGlobalStore = create<GlobalStore>(set => ({
   username: '',
-  setUsername: (name) => set({ username: name }),
+  setUsername: name => set({ username: name }),
   events: [],
-  addEvent: (event) => set((state) => ({ events: [...state.events, event] })),
+  addEvent: event => set(state => ({ events: [...state.events, event] })),
 }));

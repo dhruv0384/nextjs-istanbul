@@ -8,15 +8,8 @@ import dynamic from 'next/dynamic';
 import { APP_NAME } from '../constants';
 import { logPageVisit } from '../lib/analytics';
 
-import { Button } from "./../components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./../components/ui/card";
+import { Button } from './../components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './../components/ui/card';
 
 const LazyMessage = dynamic(() => import('./../components/LazyMessage'), {
   loading: () => <p>Loading message...</p>,
@@ -53,13 +46,19 @@ export default function Home() {
           <CardContent>
             <ul className="space-y-2 pt-4">
               <li>
-                <Link className="text-blue-600 hover:underline" href="/calendar">📅 Calendar Page</Link>
+                <Link className="text-blue-600 hover:underline" href="/calendar">
+                  📅 Calendar Page
+                </Link>
               </li>
               <li>
-                <Link className="text-blue-600 hover:underline" href="/cfm">📝 Customer Feedback</Link>
+                <Link className="text-blue-600 hover:underline" href="/cfm">
+                  📝 Customer Feedback
+                </Link>
               </li>
               <li>
-                <Link className="text-blue-600 hover:underline" href="/login">🔐 Login</Link>
+                <Link className="text-blue-600 hover:underline" href="/login">
+                  🔐 Login
+                </Link>
               </li>
             </ul>
           </CardContent>
@@ -68,6 +67,5 @@ export default function Home() {
     </div>
   );
 }
-
 
 //  "cfm": [src/modules/]

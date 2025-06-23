@@ -10,14 +10,12 @@ const CalendarModal = dynamic(() => import('./components/CalendarModal'), {
 });
 
 const Assistant = () => (
-  <div className="p-4 bg-blue-100 rounded-md mt-4">
-    🤖 Hi! I’m your Calendar Assistant. Ask me anything!
-  </div>
+  <div className="p-4 bg-blue-100 rounded-md mt-4">🤖 Hi! I’m your Calendar Assistant. Ask me anything!</div>
 );
 
 // Unused complex function (dead code)
 export function getZodiacFromDate(date: Date): string {
-  return 'Aries'; 
+  return 'Aries';
 }
 
 // Enum + switch with unhandled case (dead code)
@@ -82,7 +80,7 @@ export default function CalendarPage() {
 
       <button
         className="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-        onClick={() => setShowAssistant((prev) => !prev)}
+        onClick={() => setShowAssistant(prev => !prev)}
       >
         {showAssistant ? 'Hide' : 'Show'} Assistant
       </button>

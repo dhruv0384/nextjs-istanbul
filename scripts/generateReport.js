@@ -1,23 +1,23 @@
 // scripts/generateReport.js
-const fs = require("fs");
-const path = require("path");
-const libCoverage = require("istanbul-lib-coverage");
-const libReport = require("istanbul-lib-report");
-const reports = require("istanbul-reports");
-const { Writable } = require("stream");
+const fs = require('fs');
+const path = require('path');
+const libCoverage = require('istanbul-lib-coverage');
+const libReport = require('istanbul-lib-report');
+const reports = require('istanbul-reports');
+const { Writable } = require('stream');
 
 // Parsing modules from CLI
-const arg = process.argv.find((a) => a.startsWith("--module="));
+const arg = process.argv.find(a => a.startsWith('--module='));
 if (!arg) {
-  console.error("❌ Please provide --module=<name1,name2>");
+  console.error('❌ Please provide --module=<name1,name2>');
   process.exit(1);
 }
-const modules = arg.split("=")[1].split(",");
+const modules = arg.split('=')[1].split(',');
 
 // Accumulate summaries
 const summaryRows = [];
 
-modules.forEach((mod) => {
+modules.forEach(mod => {
   const covJson = path.resolve(`module-coverage/${mod}/coverage-final.json`);
   if (!fs.existsSync(covJson)) {
     console.warn(`⚠️ No coverage data for module '${mod}', skipping.`);
@@ -25,7 +25,7 @@ modules.forEach((mod) => {
   }
 
   // Load and map coverage
-  const raw = JSON.parse(fs.readFileSync(covJson, "utf-8"));
+  const raw = JSON.parse(fs.readFileSync(covJson, 'utf-8'));
   const coverageMap = libCoverage.createCoverageMap(raw);
 
   const reportDir = path.resolve(`coverage/${mod}`);
@@ -35,40 +35,39 @@ modules.forEach((mod) => {
   const htmlContext = libReport.createContext({
     dir: reportDir,
     coverageMap,
-    defaultSummarizer: "pkg",
+    defaultSummarizer: 'pkg',
   });
 
-  reports.create("html").execute(htmlContext);
+  reports.create('html').execute(htmlContext);
 
   // Text report
 
   const textContext = libReport.createContext({
     dir: reportDir,
     coverageMap,
-    defaultSummarizer: "pkg",
+    defaultSummarizer: 'pkg',
   });
 
-  let textOutput = "";
+  let textOutput = '';
   const writer = new Writable({
     write(chunk, enc, cb) {
       textOutput += chunk.toString();
       cb();
-    }
+    },
   });
-
 
   textContext.writer = writer;
 
-  reports.create("text-summary").execute(textContext);
+  reports.create('text-summary').execute(textContext);
 
   // Extract raw counts + percentages
   const sum = coverageMap.getCoverageSummary().toJSON();
   summaryRows.push({
     module: mod,
     statements: `${sum.statements.pct}% (${sum.statements.covered}/${sum.statements.total})`,
-    branches:   `${sum.branches.pct}% (${sum.branches.covered}/${sum.branches.total})`,
-    functions:  `${sum.functions.pct}% (${sum.functions.covered}/${sum.functions.total})`,
-    lines:      `${sum.lines.pct}% (${sum.lines.covered}/${sum.lines.total})`,
+    branches: `${sum.branches.pct}% (${sum.branches.covered}/${sum.branches.total})`,
+    functions: `${sum.functions.pct}% (${sum.functions.covered}/${sum.functions.total})`,
+    lines: `${sum.lines.pct}% (${sum.lines.covered}/${sum.lines.total})`,
     link: `./${mod}/index.html`,
     textSummary: textOutput.trim(),
   });
@@ -77,10 +76,12 @@ modules.forEach((mod) => {
 });
 
 // Build master summary index.html
-const masterDir = path.resolve("coverage");
+const masterDir = path.resolve('coverage');
 fs.mkdirSync(masterDir, { recursive: true });
 
-const tableRows = summaryRows.map(r => `
+const tableRows = summaryRows
+  .map(
+    r => `
   <tr>
     <td>${r.module}</td>
     <td>${r.statements}</td>
@@ -89,14 +90,20 @@ const tableRows = summaryRows.map(r => `
     <td>${r.lines}</td>
     <td><a href="${r.link}" target="_blank">View</a></td>
   </tr>
-`).join("");
+`
+  )
+  .join('');
 
-const textSections = summaryRows.map(r => `
+const textSections = summaryRows
+  .map(
+    r => `
   <details>
     <summary><strong>${r.module} Text Summary</strong></summary>
     <pre>${r.textSummary}</pre>
   </details>
-`).join("");
+`
+  )
+  .join('');
 
 const masterHtml = `
 <!DOCTYPE html>
@@ -131,5 +138,5 @@ const masterHtml = `
 </html>
 `;
 
-fs.writeFileSync(path.join(masterDir, "index.html"), masterHtml, "utf-8");
+fs.writeFileSync(path.join(masterDir, 'index.html'), masterHtml, 'utf-8');
 console.log(`Master summary at: coverage/index.html`);

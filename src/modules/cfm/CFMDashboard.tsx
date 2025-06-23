@@ -3,12 +3,7 @@
 import { useFeedbackData } from './hooks/useFeedbackData';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogTrigger, DialogContent, DialogHeader } from '@/components/ui/dialog';
 import { Switch } from '@/components/ui/switch';
@@ -33,9 +28,7 @@ export default function CFMDashboard() {
           </div>
 
           {showRaw && (
-            <pre className="bg-muted p-3 rounded-md overflow-x-auto text-sm">
-              {JSON.stringify(feedback, null, 2)}
-            </pre>
+            <pre className="bg-muted p-3 rounded-md overflow-x-auto text-sm">{JSON.stringify(feedback, null, 2)}</pre>
           )}
 
           <Dialog>
@@ -46,7 +39,7 @@ export default function CFMDashboard() {
               <DialogHeader>
                 <h3 className="text-lg font-semibold">Feedback Summary</h3>
               </DialogHeader>
-              <FeedbackModal feedback={feedback}/>
+              <FeedbackModal feedback={feedback} />
             </DialogContent>
           </Dialog>
         </CardContent>
