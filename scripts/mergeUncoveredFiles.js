@@ -44,37 +44,38 @@ function fileMatchesModule(relativePath, moduleName) {
   return patterns.some(pattern => minimatch(relativePath, pattern));
 }
 
-async function collectUncoveredCoverage(selectedModules, existingFilesSet) {
+async function collectUncoveredCoverage(selectedModules, existingCoverageMap) {
   const allFiles = await globAsync('**/*.{ts,tsx}', {
     cwd: SRC_DIR,
     absolute: true,
     ignore: ['**/*.d.ts', '**/__tests__/**'],
   });
 
-  const uncoveredMap = createCoverageMap({});
+  const alreadyCoveredFiles = new Set(existingCoverageMap.files());
 
   for (const fileAbsPath of allFiles) {
     const fileRelPath = path.relative(ROOT_DIR, fileAbsPath);
 
-    const belongsToModule = selectedModules.some(module => fileMatchesModule(fileRelPath, module));
+    const belongsToModule = selectedModules.some(module =>
+      fileMatchesModule(fileRelPath, module)
+    );
 
     // Skip if not part of selected module
     if (!belongsToModule) continue;
 
     // Skip if already in coverage
-    if (existingFilesSet.has(fileAbsPath)) continue;
+    if (alreadyCoveredFiles.has(fileAbsPath)) continue;
 
     try {
       const fileCoverage = await instrumentFile(fileAbsPath);
-      uncoveredMap.addFileCoverage(fileCoverage);
+      existingCoverageMap.addFileCoverage(fileCoverage);
       console.log(`➡️  Adding file: ${fileRelPath}`);
     } catch (err) {
       console.warn(`Failed to instrument ${fileAbsPath}: ${err.message}`);
     }
   }
-
-  return uncoveredMap;
 }
+
 
 async function run() {
   const args = process.argv.slice(2);
@@ -92,18 +93,11 @@ async function run() {
     ? createCoverageMap(JSON.parse(fs.readFileSync(COVERAGE_FINAL, 'utf-8')))
     : createCoverageMap({});
 
-  // Create a Set of already covered file paths
-  const alreadyCoveredFiles = new Set(existingCoverageMap.files());
-
-  // Collect new uncovered files only for selected modules
-  const newCoverageMap = await collectUncoveredCoverage(selectedModules, alreadyCoveredFiles);
-
-  // Merge raw data using .toJSON() to avoid issues
-  const merged = createCoverageMap(existingCoverageMap.toJSON());
-  merged.merge(newCoverageMap.toJSON());
+  // Directly update this map with uncovered files
+  await collectUncoveredCoverage(selectedModules, existingCoverageMap);
 
   // Write back to file
-  fs.writeFileSync(COVERAGE_FINAL, JSON.stringify(merged.toJSON(), null, 2));
+  fs.writeFileSync(COVERAGE_FINAL, JSON.stringify(existingCoverageMap.toJSON(), null, 2));
   console.log('✅ Successfully merged *new uncovered files* into coverage-final.json');
 }
 
