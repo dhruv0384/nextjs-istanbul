@@ -20,7 +20,7 @@ for (const mod of modules) {
 
   const filtered = {};
   for (const file in rawCoverage) {
-    const normalizedFile = file.replace(/\\/g, '/');
+    const normalizedFile = file.replace(/\\/g, '/');       // Normalize Windows paths to Unix style
     if (patterns.some(pattern => minimatch(normalizedFile, pattern))) {
       filtered[file] = rawCoverage[file];
     }

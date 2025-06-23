@@ -32,19 +32,39 @@ public class CoverageUtils {
                 }
             }
 
-            Path perTestDir = Paths.get("per-test-coverage");
-            Files.createDirectories(perTestDir);
-            Path perTestPath = perTestDir.resolve(testName + "-coverage.json");
-            Files.write(perTestPath, filteredCoverage.toString(2).getBytes());
-            System.out.println("📄 Per-test coverage written to: " + perTestPath.toAbsolutePath());
+            // Write to temp file
+            Path tempFile = Paths.get("coverage", "tmp-" + testName + ".json");
+            Files.write(tempFile, filteredCoverage.toString(2).getBytes());
+            System.out.println("📄 Wrote current test coverage to: " + tempFile);
 
-            runShellCommand("npx nyc merge per-test-coverage coverage/coverage-final.json");
-            // runShellCommand("mkdir -p ../.nyc_output && cp coverage/coverage-final.json ../.nyc_output/out.json");
-            // runShellCommand("npx nyc report --report-dir=coverage --reporter=html");
+            // Merge tmp and final using nyc
+            runShellCommand("npx nyc merge coverage coverage/coverage-final.json");
+            System.out.println("✅ Merged into coverage-final.json using nyc merge");
 
-            System.out.println("📦 Final merged coverage + HTML report updated");
+            // Clean up temp file
+            Files.deleteIfExists(tempFile);
 
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void initializeEmptyCoverageFile() {
+        try {
+            Path coverageDir = Paths.get("coverage");
+            if (Files.exists(coverageDir)) {
+                deleteDirectoryRecursively(coverageDir);
+                System.out.println("🧹 Cleared previous coverage directory.");
+            }
+
+            Files.createDirectories(coverageDir);
+            Path finalCoveragePath = coverageDir.resolve("coverage-final.json");
+
+            Files.write(finalCoveragePath, "{}".getBytes());
+            System.out.println("📝 Initialized fresh coverage-final.json");
+
+        } catch (IOException e) {
+            System.err.println("❌ Failed to initialize coverage-final.json");
             e.printStackTrace();
         }
     }
@@ -69,5 +89,16 @@ public class CoverageUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static void deleteDirectoryRecursively(Path path) throws IOException {
+        if (Files.isDirectory(path)) {
+            try (DirectoryStream<Path> entries = Files.newDirectoryStream(path)) {
+                for (Path entry : entries) {
+                    deleteDirectoryRecursively(entry);
+                }
+            }
+        }
+        Files.delete(path);
     }
 }

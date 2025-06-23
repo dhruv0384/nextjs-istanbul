@@ -94,17 +94,6 @@ const tableRows = summaryRows
   )
   .join('');
 
-const textSections = summaryRows
-  .map(
-    r => `
-  <details>
-    <summary><strong>${r.module} Text Summary</strong></summary>
-    <pre>${r.textSummary}</pre>
-  </details>
-`
-  )
-  .join('');
-
 const masterHtml = `
 <!DOCTYPE html>
 <html lang="en">
