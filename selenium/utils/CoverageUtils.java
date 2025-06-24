@@ -19,17 +19,10 @@ public class CoverageUtils {
             }
 
             JSONObject currentCoverage = new JSONObject((String) result);
-            JSONObject filteredCoverage = new JSONObject();
-
-            for (String file : currentCoverage.keySet()) {
-                if (!file.contains("node_modules")) {
-                    filteredCoverage.put(file, currentCoverage.get(file));
-                }
-            }
 
             // Write to temp file
             Path tempFile = Paths.get("coverage", "tmp-" + testName + ".json");
-            Files.write(tempFile, filteredCoverage.toString(2).getBytes());
+            Files.write(tempFile, currentCoverage.toString(2).getBytes());
             System.out.println("📄 Wrote current test coverage to: " + tempFile);
 
             // Merge tmp and final using nyc

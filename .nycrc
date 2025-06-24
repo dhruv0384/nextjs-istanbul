@@ -1,5 +1,0 @@
-{
-  "include": ["src/**/*.{ts,tsx,js,jsx}"],
-  "all": true,
-  "reporter": ["text", "html"]
-}
