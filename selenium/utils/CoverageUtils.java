@@ -11,11 +11,6 @@ public class CoverageUtils {
 
     public static void extractCoverage(WebDriver driver, String testName) {
         try {
-            if (!(driver instanceof JavascriptExecutor)) {
-                System.err.println("❌ Driver is not a JavascriptExecutor.");
-                return;
-            }
-
             JavascriptExecutor js = (JavascriptExecutor) driver;
             Object result = js.executeScript("return window.__coverage__ ? JSON.stringify(window.__coverage__) : null;");
             if (!(result instanceof String)) {

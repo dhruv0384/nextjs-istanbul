@@ -81,12 +81,15 @@ async function run() {
   const args = process.argv.slice(2);
   const moduleArg = args.find(arg => arg.startsWith('--module='));
 
-  if (!moduleArg) {
-    console.error('Please provide --module=<name1,name2>');
+  const selectedModules =
+    !moduleArg || moduleArg === '--module='
+      ? Object.keys(moduleMapping)
+      : moduleArg.split('=')[1].split(',').filter(Boolean);
+
+  if (selectedModules.length === 0) {
+    console.error('No modules provided and moduleMapping is empty.');
     process.exit(1);
   }
-
-  const selectedModules = moduleArg.split('=')[1].split(',');
 
   // Load existing coverage-final.json
   const existingCoverageMap = fs.existsSync(COVERAGE_FINAL)

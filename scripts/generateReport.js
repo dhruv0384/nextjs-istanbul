@@ -6,13 +6,17 @@ const libReport = require('istanbul-lib-report');
 const reports = require('istanbul-reports');
 const { Writable } = require('stream');
 
-// Parsing modules from CLI
+const moduleMapping = require('./moduleMapping.json');
 const arg = process.argv.find(a => a.startsWith('--module='));
-if (!arg) {
-  console.error('❌ Please provide --module=<name1,name2>');
+const modules =
+  !arg || arg === '--module='
+    ? Object.keys(moduleMapping)
+    : arg.split('=')[1].split(',').filter(Boolean);
+
+if (modules.length === 0) {
+  console.error('No modules provided and moduleMapping is empty.');
   process.exit(1);
 }
-const modules = arg.split('=')[1].split(',');
 
 // Accumulate summaries
 const summaryRows = [];

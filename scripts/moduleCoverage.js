@@ -2,13 +2,18 @@ const fs = require('fs');
 const path = require('path');
 const { minimatch } = require('minimatch');
 
+const moduleMapping = require('./moduleMapping.json');
+
 const arg = process.argv.find(arg => arg.startsWith('--module='));
-if (!arg) {
-  console.error('Please provide --module=<name1,name2>');
+const modules =
+  !arg || arg === '--module='
+    ? Object.keys(moduleMapping)
+    : arg.split('=')[1].split(',').filter(Boolean);
+
+if (modules.length === 0) {
+  console.error('No modules provided and moduleMapping is empty.');
   process.exit(1);
 }
-const modules = arg.split('=')[1].split(',');
-const moduleMapping = require('./moduleMapping.json');
 const rawCoverage = JSON.parse(fs.readFileSync('coverage/coverage-final.json', 'utf-8'));
 
 for (const mod of modules) {
