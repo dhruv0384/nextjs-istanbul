@@ -1,10 +1,10 @@
-// scripts/generateReport.js
 const fs = require('fs');
 const path = require('path');
 const libCoverage = require('istanbul-lib-coverage');
 const libReport = require('istanbul-lib-report');
 const reports = require('istanbul-reports');
 const { Writable } = require('stream');
+const {getModuleCoveragePath, getModuleReportDir} = require('./utils/coveragePaths');
 
 const moduleMapping = require('./moduleMapping.json');
 const arg = process.argv.find(a => a.startsWith('--module='));
@@ -22,7 +22,7 @@ if (modules.length === 0) {
 const summaryRows = [];
 
 modules.forEach(mod => {
-  const covJson = path.resolve(`module-coverage/${mod}/coverage-final.json`);
+  const covJson = getModuleCoveragePath(mod);
   if (!fs.existsSync(covJson)) {
     console.warn(`⚠️ No coverage data for module '${mod}', skipping.`);
     return;
@@ -32,7 +32,7 @@ modules.forEach(mod => {
   const raw = JSON.parse(fs.readFileSync(covJson, 'utf-8'));
   const coverageMap = libCoverage.createCoverageMap(raw);
 
-  const reportDir = path.resolve(`coverage/${mod}`);
+  const reportDir = getModuleReportDir(mod);
   fs.mkdirSync(reportDir, { recursive: true });
 
   //  context for HTML report
