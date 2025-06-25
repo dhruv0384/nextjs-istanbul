@@ -1,14 +1,14 @@
 'use client';
 
-import { useGlobalStore } from '../store/useGlobalStore';
+import { useGlobalStore } from '@/store/useGlobalStore';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Button } from '../components/ui/button';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '../components/ui/input';
+import { Input } from '@/components/ui/input';
 
 export default function LoginPage() {
   const setUsername = useGlobalStore(s => s.setUsername);
@@ -22,7 +22,6 @@ export default function LoginPage() {
     }
     setUsername(input);
     toast.success('Logged in successfully!');
-    setTimeout(() => router.push('/admin'), 1000);
   };
 
   return (
