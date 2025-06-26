@@ -6,6 +6,8 @@ import { create as createReport } from 'istanbul-reports';
 import { Writable } from 'stream';
 import moduleMapping from './moduleMapping.json';
 import { getModuleCoveragePath, getModuleReportDir } from './utils/coveragePaths';
+import { getModulesFromArgs } from './utils/getModules';
+import { COVERAGE_DIR } from './constants';
 
 type SummaryRow = {
   module: string;
@@ -17,14 +19,7 @@ type SummaryRow = {
   textSummary: string;
 };
 
-const arg = process.argv.find(a => a.startsWith('--module='));
-const modules: string[] =
-  !arg || arg === '--module=' ? Object.keys(moduleMapping) : arg.split('=')[1].split(',').filter(Boolean);
-
-if (modules.length === 0) {
-  console.error('No modules provided and moduleMapping is empty.');
-  process.exit(1);
-}
+const modules = getModulesFromArgs();
 
 const summaryRows: SummaryRow[] = [];
 
@@ -85,8 +80,7 @@ for (const mod of modules) {
   console.log(`Generated reports for '${mod}'`);
 }
 
-const masterDir = path.resolve('coverage');
-fs.mkdirSync(masterDir, { recursive: true });
+fs.mkdirSync(COVERAGE_DIR, { recursive: true });
 
 const tableRows = summaryRows
   .map(
@@ -130,5 +124,5 @@ const masterHtml = `<!DOCTYPE html>
 </body>
 </html>`;
 
-fs.writeFileSync(path.join(masterDir, 'index.html'), masterHtml, 'utf-8');
+fs.writeFileSync(path.join(COVERAGE_DIR, 'index.html'), masterHtml, 'utf-8');
 console.log('Master summary at: coverage/index.html');

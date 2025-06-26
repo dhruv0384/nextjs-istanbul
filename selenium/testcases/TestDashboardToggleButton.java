@@ -29,7 +29,7 @@ public class TestDashboardToggleButton {
 
     @After
     public void tearDown() {
-        CoverageUtils.extractCoverage(driver, "TestDashboard");
+        CoverageUtils.extractCoverage(driver, "TestDashboardToggleButton");
         driver.quit();
     }
 }

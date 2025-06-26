@@ -1,18 +1,15 @@
-const fs = require('fs');
-const path = require('path');
-const { minimatch } = require('minimatch');
-const { createInstrumenter } = require('istanbul-lib-instrument');
-const { createCoverageMap, CoverageMap } = require('istanbul-lib-coverage');
-const { transform } = require('@swc/core');
-const { promisify } = require('util');
-const glob = require('glob');
+import * as fs from 'fs';
+import * as path from 'path';
+import { minimatch } from 'minimatch';
+import { createInstrumenter } from 'istanbul-lib-instrument';
+import { createCoverageMap, CoverageMap } from 'istanbul-lib-coverage';
+import { transform } from '@swc/core';
+import { promisify } from 'util';
+import globModule from 'glob';
 
-const globAsync = promisify(glob);
-
-const ROOT_DIR = path.resolve();
-const SRC_DIR = path.join(ROOT_DIR, 'src');
-const COVERAGE_FINAL = path.join(ROOT_DIR, 'coverage/coverage-final.json');
-const MODULE_MAPPING_PATH = path.join(__dirname, 'moduleMapping.json');
+const globAsync = promisify(globModule);
+import { getModulesFromArgs } from './utils/getModules';
+import { ROOT_DIR, SRC_DIR, MODULE_MAPPING_PATH, COVERAGE_OBJECT_PATH } from './constants';
 
 // Load module mappings
 const moduleMapping: Record<string, string[]> = JSON.parse(fs.readFileSync(MODULE_MAPPING_PATH, 'utf-8'));
@@ -80,29 +77,18 @@ async function collectUncoveredCoverage(
 }
 
 async function run(): Promise<void> {
-  const args = process.argv.slice(2);
-  const moduleArg = args.find(arg => arg.startsWith('--module='));
-
-  const selectedModules =
-    !moduleArg || moduleArg === '--module='
-      ? Object.keys(moduleMapping)
-      : moduleArg.split('=')[1].split(',').filter(Boolean);
-
-  if (selectedModules.length === 0) {
-    console.error('No modules provided and moduleMapping is empty.');
-    process.exit(1);
-  }
+  const selectedModules = getModulesFromArgs();
 
   // Load existing coverage-final.json
-  const existingCoverageMap = fs.existsSync(COVERAGE_FINAL)
-    ? createCoverageMap(JSON.parse(fs.readFileSync(COVERAGE_FINAL, 'utf-8')))
+  const existingCoverageMap = fs.existsSync(COVERAGE_OBJECT_PATH)
+    ? createCoverageMap(JSON.parse(fs.readFileSync(COVERAGE_OBJECT_PATH, 'utf-8')))
     : createCoverageMap({});
 
   // Directly update this map with uncovered files
   await collectUncoveredCoverage(selectedModules, existingCoverageMap);
 
   // Write back to file
-  fs.writeFileSync(COVERAGE_FINAL, JSON.stringify(existingCoverageMap.toJSON(), null, 2));
+  fs.writeFileSync(COVERAGE_OBJECT_PATH, JSON.stringify(existingCoverageMap.toJSON(), null, 2));
   console.log('✅ Successfully merged *new uncovered files* into coverage-final.json');
 }
 

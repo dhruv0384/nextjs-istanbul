@@ -27,8 +27,9 @@ public class MainTestRunner {
             // TestToggleRawFeedback.class,
             // TestNavigationLinks.class,
             // TestLazyMessage.class,
-            // TestDashboard.class,
+            TestDashboard.class,
             TestDashboardToggleButton.class,
+            TestDashboardToggleTheme.class,
         };
 
         int totalTests = 0;

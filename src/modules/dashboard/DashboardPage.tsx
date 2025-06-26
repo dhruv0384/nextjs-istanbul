@@ -54,7 +54,7 @@ export default function Page() {
             </div>
 
             <div className="flex items-center gap-4">
-              <Button variant="ghost" size="icon" onClick={handleToggle} data-testid="toggle-theme">
+              <Button variant="ghost" size="icon" onClick={handleToggle} data-testid="toggle-theme" id="toggle-theme">
                 <SunMoon className="h-5 w-5" />
               </Button>
               <DropdownMenu>
