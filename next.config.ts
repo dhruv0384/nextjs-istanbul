@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
         'swc-plugin-coverage-instrument',
         {
           coverageVariable: '__coverage__',
-          unstableExclude: ["**/node_modules/**"]
+          unstableExclude: ['**/node_modules/**'],
         },
       ],
     ],

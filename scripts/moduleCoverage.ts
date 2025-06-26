@@ -29,8 +29,7 @@ if (!fs.existsSync(coveragePath)) {
   process.exit(1);
 }
 
-const rawCoverage: Record<string, any> =
-  JSON.parse(fs.readFileSync(coveragePath, 'utf-8'));
+const rawCoverage: Record<string, any> = JSON.parse(fs.readFileSync(coveragePath, 'utf-8'));
 
 modules.forEach(mod => {
   const patterns = moduleMapping[mod];

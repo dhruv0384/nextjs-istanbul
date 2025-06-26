@@ -15,8 +15,7 @@ const COVERAGE_FINAL = path.join(ROOT_DIR, 'coverage/coverage-final.json');
 const MODULE_MAPPING_PATH = path.join(__dirname, 'moduleMapping.json');
 
 // Load module mappings
-const moduleMapping: Record<string, string[]> =
-  JSON.parse(fs.readFileSync(MODULE_MAPPING_PATH, 'utf-8'));
+const moduleMapping: Record<string, string[]> = JSON.parse(fs.readFileSync(MODULE_MAPPING_PATH, 'utf-8'));
 
 type FileCoverage = any;
 
@@ -47,7 +46,10 @@ function fileMatchesModule(relativePath: string, moduleName: string): boolean {
   return patterns.some((pattern: string) => minimatch(relativePath, pattern));
 }
 
-async function collectUncoveredCoverage(selectedModules: string[], existingCoverageMap: typeof CoverageMap.prototype): Promise<void> {
+async function collectUncoveredCoverage(
+  selectedModules: string[],
+  existingCoverageMap: typeof CoverageMap.prototype
+): Promise<void> {
   const allFiles = await globAsync('**/*.{ts,tsx}', {
     cwd: SRC_DIR,
     absolute: true,
@@ -59,9 +61,7 @@ async function collectUncoveredCoverage(selectedModules: string[], existingCover
   for (const fileAbsPath of allFiles) {
     const fileRelPath = path.relative(ROOT_DIR, fileAbsPath);
 
-    const belongsToModule = selectedModules.some(module =>
-      fileMatchesModule(fileRelPath, module)
-    );
+    const belongsToModule = selectedModules.some(module => fileMatchesModule(fileRelPath, module));
 
     // Skip if not part of selected module
     if (!belongsToModule) continue;
@@ -78,7 +78,6 @@ async function collectUncoveredCoverage(selectedModules: string[], existingCover
     }
   }
 }
-
 
 async function run(): Promise<void> {
   const args = process.argv.slice(2);

@@ -1,14 +1,11 @@
-import * as fs from "fs";
-import * as path from "path";
-import { createCoverageMap, CoverageMap } from "istanbul-lib-coverage";
-import { createContext, ReportContext } from "istanbul-lib-report";
-import { create as createReport } from "istanbul-reports";
-import { Writable } from "stream";
-import moduleMapping from "./moduleMapping.json";
-import {
-  getModuleCoveragePath,
-  getModuleReportDir,
-} from "./utils/coveragePaths";
+import * as fs from 'fs';
+import * as path from 'path';
+import { createCoverageMap, CoverageMap } from 'istanbul-lib-coverage';
+import { createContext, ReportContext } from 'istanbul-lib-report';
+import { create as createReport } from 'istanbul-reports';
+import { Writable } from 'stream';
+import moduleMapping from './moduleMapping.json';
+import { getModuleCoveragePath, getModuleReportDir } from './utils/coveragePaths';
 
 type SummaryRow = {
   module: string;
@@ -20,18 +17,14 @@ type SummaryRow = {
   textSummary: string;
 };
 
-
-const arg = process.argv.find((a) => a.startsWith("--module="));
+const arg = process.argv.find(a => a.startsWith('--module='));
 const modules: string[] =
-  !arg || arg === "--module="
-    ? Object.keys(moduleMapping)
-    : arg.split("=")[1].split(",").filter(Boolean);
+  !arg || arg === '--module=' ? Object.keys(moduleMapping) : arg.split('=')[1].split(',').filter(Boolean);
 
 if (modules.length === 0) {
-  console.error("No modules provided and moduleMapping is empty.");
+  console.error('No modules provided and moduleMapping is empty.');
   process.exit(1);
 }
-
 
 const summaryRows: SummaryRow[] = [];
 
@@ -43,7 +36,7 @@ for (const mod of modules) {
   }
 
   // load raw coverage JSON and build a CoverageMap
-  const raw = JSON.parse(fs.readFileSync(covJson, "utf-8"));
+  const raw = JSON.parse(fs.readFileSync(covJson, 'utf-8'));
   const coverageMap: CoverageMap = createCoverageMap(raw);
 
   // ensure report directory exists
@@ -54,24 +47,28 @@ for (const mod of modules) {
   const htmlContext: ReportContext = createContext({
     dir: reportDir,
     coverageMap,
-    defaultSummarizer: "pkg",
+    defaultSummarizer: 'pkg',
   });
-  createReport("html").execute(htmlContext);
+  createReport('html').execute(htmlContext);
 
   // Text-summary report (capture output in a string)
-  const textContext: ReportContext = createContext({
-    dir: reportDir,
-    coverageMap,
-    defaultSummarizer: "pkg",
-  });
-  let textOutput = "";
-  textContext.writer = new Writable({
+  let textOutput = '';
+  const customStream = new Writable({
     write(chunk, _enc, cb) {
       textOutput += chunk.toString();
       cb();
     },
   });
-  createReport("text-summary").execute(textContext);
+
+  const textContext = createContext({
+    dir: reportDir,
+    coverageMap: coverageMap,
+    defaultSummarizer: 'pkg',
+    writer: customStream,
+  });
+
+  // Generate the report
+  createReport('text-summary').execute(textContext);
 
   // pull metrics
   const sum = coverageMap.getCoverageSummary().toJSON();
@@ -88,12 +85,12 @@ for (const mod of modules) {
   console.log(`Generated reports for '${mod}'`);
 }
 
-const masterDir = path.resolve("coverage");
+const masterDir = path.resolve('coverage');
 fs.mkdirSync(masterDir, { recursive: true });
 
 const tableRows = summaryRows
   .map(
-    (r) => `
+    r => `
   <tr>
     <td>${r.module}</td>
     <td>${r.statements}</td>
@@ -103,7 +100,7 @@ const tableRows = summaryRows
     <td><a href="${r.link}" target="_blank">View</a></td>
   </tr>`
   )
-  .join("");
+  .join('');
 
 const masterHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -133,5 +130,5 @@ const masterHtml = `<!DOCTYPE html>
 </body>
 </html>`;
 
-fs.writeFileSync(path.join(masterDir, "index.html"), masterHtml, "utf-8");
-console.log("Master summary at: coverage/index.html");
+fs.writeFileSync(path.join(masterDir, 'index.html'), masterHtml, 'utf-8');
+console.log('Master summary at: coverage/index.html');
