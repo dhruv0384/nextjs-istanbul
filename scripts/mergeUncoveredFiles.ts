@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
+const { minimatch } = require('minimatch');
 const { createInstrumenter } = require('istanbul-lib-instrument');
-const { createCoverageMap } = require('istanbul-lib-coverage');
+const { createCoverageMap, CoverageMap } = require('istanbul-lib-coverage');
 const { transform } = require('@swc/core');
 const { promisify } = require('util');
 const glob = require('glob');
-const { minimatch } = require('minimatch');
 
 const globAsync = promisify(glob);
 
@@ -15,9 +15,12 @@ const COVERAGE_FINAL = path.join(ROOT_DIR, 'coverage/coverage-final.json');
 const MODULE_MAPPING_PATH = path.join(__dirname, 'moduleMapping.json');
 
 // Load module mappings
-const moduleMapping = JSON.parse(fs.readFileSync(MODULE_MAPPING_PATH, 'utf-8'));
+const moduleMapping: Record<string, string[]> =
+  JSON.parse(fs.readFileSync(MODULE_MAPPING_PATH, 'utf-8'));
 
-async function instrumentFile(filePath) {
+type FileCoverage = any;
+
+async function instrumentFile(filePath: string): Promise<FileCoverage> {
   const code = fs.readFileSync(filePath, 'utf-8');
   const { code: transpiled } = await transform(code, {
     filename: filePath,
@@ -39,19 +42,19 @@ async function instrumentFile(filePath) {
   return instrumenter.fileCoverage;
 }
 
-function fileMatchesModule(relativePath, moduleName) {
+function fileMatchesModule(relativePath: string, moduleName: string): boolean {
   const patterns = moduleMapping[moduleName] || [];
-  return patterns.some(pattern => minimatch(relativePath, pattern));
+  return patterns.some((pattern: string) => minimatch(relativePath, pattern));
 }
 
-async function collectUncoveredCoverage(selectedModules, existingCoverageMap) {
+async function collectUncoveredCoverage(selectedModules: string[], existingCoverageMap: typeof CoverageMap.prototype): Promise<void> {
   const allFiles = await globAsync('**/*.{ts,tsx}', {
     cwd: SRC_DIR,
     absolute: true,
     ignore: ['**/*.d.ts', '**/__tests__/**'],
   });
 
-  const alreadyCoveredFiles = new Set(existingCoverageMap.files());
+  const alreadyCoveredFiles = new Set<string>(existingCoverageMap.files());
 
   for (const fileAbsPath of allFiles) {
     const fileRelPath = path.relative(ROOT_DIR, fileAbsPath);
@@ -70,14 +73,14 @@ async function collectUncoveredCoverage(selectedModules, existingCoverageMap) {
       const fileCoverage = await instrumentFile(fileAbsPath);
       existingCoverageMap.addFileCoverage(fileCoverage);
       console.log(`➡️  Adding file: ${fileRelPath}`);
-    } catch (err) {
+    } catch (err: any) {
       console.warn(`Failed to instrument ${fileAbsPath}: ${err.message}`);
     }
   }
 }
 
 
-async function run() {
+async function run(): Promise<void> {
   const args = process.argv.slice(2);
   const moduleArg = args.find(arg => arg.startsWith('--module='));
 
@@ -104,4 +107,7 @@ async function run() {
   console.log('✅ Successfully merged *new uncovered files* into coverage-final.json');
 }
 
-run();
+run().catch(e => {
+  console.log(e);
+  process.exit(1);
+});

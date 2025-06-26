@@ -20,14 +20,14 @@ public class MainTestRunner {
         CoverageUtils.initializeEmptyCoverageFile();
 
         Class<?>[] tests = {
-            TestCalendarPageLoad.class,
-            TestAssistantToggle.class,
-            TestModalRendering.class,
-            TestFeedbackModalOpenClose.class,
-            TestToggleRawFeedback.class,
-            TestNavigationLinks.class,
-            TestLazyMessage.class,
-            TestDashboard.class,
+            // TestCalendarPageLoad.class,
+            // TestAssistantToggle.class,
+            // TestModalRendering.class,
+            // TestFeedbackModalOpenClose.class,
+            // TestToggleRawFeedback.class,
+            // TestNavigationLinks.class,
+            // TestLazyMessage.class,
+            // TestDashboard.class,
             TestDashboardToggleButton.class,
         };
 

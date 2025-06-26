@@ -1,70 +1,79 @@
-const fs = require('fs');
-const path = require('path');
-const libCoverage = require('istanbul-lib-coverage');
-const libReport = require('istanbul-lib-report');
-const reports = require('istanbul-reports');
-const { Writable } = require('stream');
-const {getModuleCoveragePath, getModuleReportDir} = require('./utils/coveragePaths');
+import * as fs from "fs";
+import * as path from "path";
+import { createCoverageMap, CoverageMap } from "istanbul-lib-coverage";
+import { createContext, ReportContext } from "istanbul-lib-report";
+import { create as createReport } from "istanbul-reports";
+import { Writable } from "stream";
+import moduleMapping from "./moduleMapping.json";
+import {
+  getModuleCoveragePath,
+  getModuleReportDir,
+} from "./utils/coveragePaths";
 
-const moduleMapping = require('./moduleMapping.json');
-const arg = process.argv.find(a => a.startsWith('--module='));
-const modules =
-  !arg || arg === '--module='
+type SummaryRow = {
+  module: string;
+  statements: string;
+  branches: string;
+  functions: string;
+  lines: string;
+  link: string;
+  textSummary: string;
+};
+
+
+const arg = process.argv.find((a) => a.startsWith("--module="));
+const modules: string[] =
+  !arg || arg === "--module="
     ? Object.keys(moduleMapping)
-    : arg.split('=')[1].split(',').filter(Boolean);
+    : arg.split("=")[1].split(",").filter(Boolean);
 
 if (modules.length === 0) {
-  console.error('No modules provided and moduleMapping is empty.');
+  console.error("No modules provided and moduleMapping is empty.");
   process.exit(1);
 }
 
-// Accumulate summaries
-const summaryRows = [];
 
-modules.forEach(mod => {
+const summaryRows: SummaryRow[] = [];
+
+for (const mod of modules) {
   const covJson = getModuleCoveragePath(mod);
   if (!fs.existsSync(covJson)) {
     console.warn(`⚠️ No coverage data for module '${mod}', skipping.`);
-    return;
+    continue;
   }
 
-  // Load and map coverage
-  const raw = JSON.parse(fs.readFileSync(covJson, 'utf-8'));
-  const coverageMap = libCoverage.createCoverageMap(raw);
+  // load raw coverage JSON and build a CoverageMap
+  const raw = JSON.parse(fs.readFileSync(covJson, "utf-8"));
+  const coverageMap: CoverageMap = createCoverageMap(raw);
 
+  // ensure report directory exists
   const reportDir = getModuleReportDir(mod);
   fs.mkdirSync(reportDir, { recursive: true });
 
-  //  context for HTML report
-  const htmlContext = libReport.createContext({
+  // HTML report
+  const htmlContext: ReportContext = createContext({
     dir: reportDir,
     coverageMap,
-    defaultSummarizer: 'pkg',
+    defaultSummarizer: "pkg",
   });
+  createReport("html").execute(htmlContext);
 
-  reports.create('html').execute(htmlContext);
-
-  // Text report
-
-  const textContext = libReport.createContext({
+  // Text-summary report (capture output in a string)
+  const textContext: ReportContext = createContext({
     dir: reportDir,
     coverageMap,
-    defaultSummarizer: 'pkg',
+    defaultSummarizer: "pkg",
   });
-
-  let textOutput = '';
-  const writer = new Writable({
-    write(chunk, enc, cb) {
+  let textOutput = "";
+  textContext.writer = new Writable({
+    write(chunk, _enc, cb) {
       textOutput += chunk.toString();
       cb();
     },
   });
+  createReport("text-summary").execute(textContext);
 
-  textContext.writer = writer;
-
-  reports.create('text-summary').execute(textContext);
-
-  // Extract raw counts + percentages
+  // pull metrics
   const sum = coverageMap.getCoverageSummary().toJSON();
   summaryRows.push({
     module: mod,
@@ -77,15 +86,14 @@ modules.forEach(mod => {
   });
 
   console.log(`Generated reports for '${mod}'`);
-});
+}
 
-// Build master summary index.html
-const masterDir = path.resolve('coverage');
+const masterDir = path.resolve("coverage");
 fs.mkdirSync(masterDir, { recursive: true });
 
 const tableRows = summaryRows
   .map(
-    r => `
+    (r) => `
   <tr>
     <td>${r.module}</td>
     <td>${r.statements}</td>
@@ -93,13 +101,11 @@ const tableRows = summaryRows
     <td>${r.functions}</td>
     <td>${r.lines}</td>
     <td><a href="${r.link}" target="_blank">View</a></td>
-  </tr>
-`
+  </tr>`
   )
-  .join('');
+  .join("");
 
-const masterHtml = `
-<!DOCTYPE html>
+const masterHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -110,8 +116,6 @@ const masterHtml = `
     th, td { padding: 0.75rem 1rem; border: 1px solid #ddd; text-align: center; }
     th { background: #eee; }
     tr:hover { background: #fafafa; }
-    details { margin: 1rem 0; padding: 1rem; background: white; border: 1px solid #ddd; border-radius: 4px; }
-    pre { background: #fafafa; padding: 1rem; border-radius: 4px; overflow-x: auto; }
     a { color: #0366d6; text-decoration: none; }
     a:hover { text-decoration: underline; }
   </style>
@@ -126,10 +130,8 @@ const masterHtml = `
     </thead>
     <tbody>${tableRows}</tbody>
   </table>
-
 </body>
-</html>
-`;
+</html>`;
 
-fs.writeFileSync(path.join(masterDir, 'index.html'), masterHtml, 'utf-8');
-console.log(`Master summary at: coverage/index.html`);
+fs.writeFileSync(path.join(masterDir, "index.html"), masterHtml, "utf-8");
+console.log("Master summary at: coverage/index.html");
