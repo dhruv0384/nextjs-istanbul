@@ -60,6 +60,11 @@ export default function Home() {
                   🔐 Login
                 </Link>
               </li>
+              <li>
+                <Link className="text-blue-600 hover:underline" href="/dashboard">
+                  🔐 Dashboard
+                </Link>
+              </li>
             </ul>
           </CardContent>
         </Card>

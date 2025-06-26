@@ -4,3 +4,6 @@ out
 coverage/
 .env
 .DS_Store
+
+per-test-coverage/
+module-coverage

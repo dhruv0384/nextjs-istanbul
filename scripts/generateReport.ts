@@ -1,66 +1,71 @@
-// scripts/generateReport.js
-const fs = require('fs');
-const path = require('path');
-const libCoverage = require('istanbul-lib-coverage');
-const libReport = require('istanbul-lib-report');
-const reports = require('istanbul-reports');
-const { Writable } = require('stream');
+import * as fs from 'fs';
+import * as path from 'path';
+import { createCoverageMap, CoverageMap } from 'istanbul-lib-coverage';
+import { createContext, ReportContext } from 'istanbul-lib-report';
+import { create as createReport } from 'istanbul-reports';
+import { Writable } from 'stream';
+import moduleMapping from './moduleMapping.json';
+import { getModuleCoveragePath, getModuleReportDir } from './utils/coveragePaths';
+import { getModulesFromArgs } from './utils/getModules';
+import { COVERAGE_DIR } from './constants';
 
-// Parsing modules from CLI
-const arg = process.argv.find(a => a.startsWith('--module='));
-if (!arg) {
-  console.error('❌ Please provide --module=<name1,name2>');
-  process.exit(1);
-}
-const modules = arg.split('=')[1].split(',');
+type SummaryRow = {
+  module: string;
+  statements: string;
+  branches: string;
+  functions: string;
+  lines: string;
+  link: string;
+  textSummary: string;
+};
 
-// Accumulate summaries
-const summaryRows = [];
+const modules = getModulesFromArgs();
 
-modules.forEach(mod => {
-  const covJson = path.resolve(`module-coverage/${mod}/coverage-final.json`);
+const summaryRows: SummaryRow[] = [];
+
+for (const mod of modules) {
+  const covJson = getModuleCoveragePath(mod);
   if (!fs.existsSync(covJson)) {
     console.warn(`⚠️ No coverage data for module '${mod}', skipping.`);
-    return;
+    continue;
   }
 
-  // Load and map coverage
+  // load raw coverage JSON and build a CoverageMap
   const raw = JSON.parse(fs.readFileSync(covJson, 'utf-8'));
-  const coverageMap = libCoverage.createCoverageMap(raw);
+  const coverageMap: CoverageMap = createCoverageMap(raw);
 
-  const reportDir = path.resolve(`coverage/${mod}`);
+  // ensure report directory exists
+  const reportDir = getModuleReportDir(mod);
   fs.mkdirSync(reportDir, { recursive: true });
 
-  //  context for HTML report
-  const htmlContext = libReport.createContext({
+  // HTML report
+  const htmlContext: ReportContext = createContext({
     dir: reportDir,
     coverageMap,
     defaultSummarizer: 'pkg',
   });
+  createReport('html').execute(htmlContext);
 
-  reports.create('html').execute(htmlContext);
-
-  // Text report
-
-  const textContext = libReport.createContext({
-    dir: reportDir,
-    coverageMap,
-    defaultSummarizer: 'pkg',
-  });
-
+  // Text-summary report (capture output in a string)
   let textOutput = '';
-  const writer = new Writable({
-    write(chunk, enc, cb) {
+  const customStream = new Writable({
+    write(chunk, _enc, cb) {
       textOutput += chunk.toString();
       cb();
     },
   });
 
-  textContext.writer = writer;
+  const textContext = createContext({
+    dir: reportDir,
+    coverageMap: coverageMap,
+    defaultSummarizer: 'pkg',
+    writer: customStream,
+  });
 
-  reports.create('text-summary').execute(textContext);
+  // Generate the report
+  createReport('text-summary').execute(textContext);
 
-  // Extract raw counts + percentages
+  // pull metrics
   const sum = coverageMap.getCoverageSummary().toJSON();
   summaryRows.push({
     module: mod,
@@ -73,11 +78,9 @@ modules.forEach(mod => {
   });
 
   console.log(`Generated reports for '${mod}'`);
-});
+}
 
-// Build master summary index.html
-const masterDir = path.resolve('coverage');
-fs.mkdirSync(masterDir, { recursive: true });
+fs.mkdirSync(COVERAGE_DIR, { recursive: true });
 
 const tableRows = summaryRows
   .map(
@@ -89,24 +92,11 @@ const tableRows = summaryRows
     <td>${r.functions}</td>
     <td>${r.lines}</td>
     <td><a href="${r.link}" target="_blank">View</a></td>
-  </tr>
-`
+  </tr>`
   )
   .join('');
 
-const textSections = summaryRows
-  .map(
-    r => `
-  <details>
-    <summary><strong>${r.module} Text Summary</strong></summary>
-    <pre>${r.textSummary}</pre>
-  </details>
-`
-  )
-  .join('');
-
-const masterHtml = `
-<!DOCTYPE html>
+const masterHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -117,8 +107,6 @@ const masterHtml = `
     th, td { padding: 0.75rem 1rem; border: 1px solid #ddd; text-align: center; }
     th { background: #eee; }
     tr:hover { background: #fafafa; }
-    details { margin: 1rem 0; padding: 1rem; background: white; border: 1px solid #ddd; border-radius: 4px; }
-    pre { background: #fafafa; padding: 1rem; border-radius: 4px; overflow-x: auto; }
     a { color: #0366d6; text-decoration: none; }
     a:hover { text-decoration: underline; }
   </style>
@@ -133,10 +121,8 @@ const masterHtml = `
     </thead>
     <tbody>${tableRows}</tbody>
   </table>
-
 </body>
-</html>
-`;
+</html>`;
 
-fs.writeFileSync(path.join(masterDir, 'index.html'), masterHtml, 'utf-8');
-console.log(`Master summary at: coverage/index.html`);
+fs.writeFileSync(path.join(COVERAGE_DIR, 'index.html'), masterHtml, 'utf-8');
+console.log('Master summary at: coverage/index.html');
